@@ -5,9 +5,14 @@ import Account from './components/Account';
 import {Routes,Route} from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import NavBar from './components/NavBar/navBar';
+import Form from './components/Form/Form';
 const App=()=>{
   return (
-    <div>
+    <div className="App">
+      <NavBar/>
+      <Form/>
+      <div>
        <h1 className="text-center text-3xl font-bold">
          Initial Signup page
        </h1>
@@ -33,6 +38,7 @@ const App=()=>{
           />
        </Routes>
        </AuthContextProvider>
+    </div>
     </div>
   );
 }
