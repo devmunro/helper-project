@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./Form.css";
 
-export default function Form() {
+ const Form = () => {
     const initialValues = { username: "", email: "", password: "" };
     const [formValues, setFormValues] = useState(initialValues)
 
@@ -31,3 +31,5 @@ export default function Form() {
         </form>
     )
 }
+
+export default Form;
