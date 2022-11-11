@@ -26,7 +26,22 @@ const Signup=()=>{
       }
    }
    return (
-      <div className='max-w-[700px] mx-auto my-16 p-4'>
+      <div className="flex justify-between p-4 bg-blue-400 text-white">
+      <div className=" flex flex-col w-[50%]  my-16 mr-9 p-4 mx-auto text-center">
+        <h1 className="text-6xl ">Helper</h1>
+        <h2 className="text-3xl ">Give a helping hand</h2>
+        <p className="w-[65%] text-justify my-12 mx-auto">
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
+        
+      </div>
+      <div className='w-[50%] my-16 mr-9 p-4'>
          <div>
             <h1 className='text-2xl font-bold py-2'>
                Sign up for a free account
@@ -46,6 +61,7 @@ const Signup=()=>{
             </div>
             <button className='border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white' type='submit'>Sign In</button>
          </form>
+      </div>
       </div>
    )
 }
