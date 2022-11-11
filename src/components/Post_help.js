@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const PostHelp = () => {
+   const navigate = useNavigate();
    const { user } = UserAuth();
    const [data, setData] = useState({
       name: '',
@@ -23,10 +25,9 @@ const PostHelp = () => {
                   user:user.uid,
                   userName:user.displayName, */
       })
-<<<<<<< HEAD
+
       navigate('/success')
-=======
->>>>>>> 3a072af ((shafi)_send_data_database)
+
    }
 
    const handleChange = (e) => {
