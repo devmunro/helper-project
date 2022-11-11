@@ -55,7 +55,7 @@ const Signin = () => {
             <label className="py-2 font-medium">Email Address</label>
             <input
               onChange={(e) => setEmail(e.target.value)}
-              className="border p-3"
+              className="border p-3 text-black"
               type="text"
             />
           </div>
@@ -63,7 +63,7 @@ const Signin = () => {
             <label className="py-2 font-medium">Password</label>
             <input
               onChange={(e) => setPassword(e.target.value)}
-              className="border p-3"
+              className="border p-3  text-black"
               type="password"
             />
           </div>
