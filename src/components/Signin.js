@@ -63,7 +63,7 @@ const Signin = () => {
             <label className="py-2 font-medium">Password</label>
             <input
               onChange={(e) => setPassword(e.target.value)}
-              className="border p-3  text-black"
+              className="border p-3 text-black"
               type="password"
             />
           </div>
