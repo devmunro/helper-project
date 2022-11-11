@@ -38,7 +38,7 @@ const Signin = () => {
           proident, sunt in culpa qui officia deserunt mollit anim id est
           laborum.
         </p>
-        
+
       </div>
       <div className="w-[50%] my-16 mr-9 p-4">
         <div>
@@ -63,7 +63,7 @@ const Signin = () => {
             <label className="py-2 font-medium">Password</label>
             <input
               onChange={(e) => setPassword(e.target.value)}
-              className="border p-3 text-black"
+              className="border p-3  text-black"
               type="password"
             />
           </div>
