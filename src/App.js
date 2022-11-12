@@ -22,23 +22,25 @@ const App = () => {
 
           <Route path="/signup" element={<Signup />} />
 
-         
-            <Route 
-                              path="/account"          
-               element={
-                  <ProtectedRoute>
-                    <Account />
-                  </ProtectedRoute>
-               }/>
-             <Route
-                path="/post-help"
-                element={<ProtectedRoute><PostHelp/></ProtectedRoute>}
-             />
+            <Route
+               path="/account"
+            >
+               <Route 
+                  index       
+                  element={
+                     <ProtectedRoute>
+                       <Account />
+                     </ProtectedRoute>
+                }/>
+                <Route
+                   path="/account/post-help"
+                   element={<PostHelp/>}
+                />
 
-              <Route
-                path="/search-help"
-                element={<ProtectedRoute><SearchHelp/></ProtectedRoute>}
-             />
+                <Route
+                   path="/account/search-help"
+                   element={<SearchHelp/>}
+                />
 
           </Route>    
 
