@@ -1,3 +1,4 @@
+
 import React from "react";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
@@ -21,31 +22,34 @@ const App = () => {
 
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/account">
+         
             <Route 
-               index             
+                              path="/account"          
                element={
                   <ProtectedRoute>
                     <Account />
                   </ProtectedRoute>
                }/>
              <Route
-                path="post-help"
-                element={<PostHelp/>}
+                path="/post-help"
+                element={<ProtectedRoute><PostHelp/></ProtectedRoute>}
              />
 
               <Route
-                path="search-help"
-                element={<SearchHelp/>}
+                path="/search-help"
+                element={<ProtectedRoute><SearchHelp/></ProtectedRoute>}
              />
+
           </Route>    
 
           <Route
              path="/success"
              element={<Success/>}
           /> 
+
         </Routes>
       </AuthContextProvider>
+      <NavBar />
     </div>
   );
 };
