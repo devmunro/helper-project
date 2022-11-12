@@ -15,7 +15,7 @@ const Search = () => {
                 }
             }).map((val, key) => {
                 return (<div className="user" key={key}>
-                    {/* Uncomment the code below to check how beuty is the Filter :D */}
+                    {/* Uncomment the code below to check how beuty is the Filter */}
                     {/* <p>{val.first_name}</p> */}
                 </div>
                 );
