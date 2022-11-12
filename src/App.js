@@ -21,24 +21,23 @@ const App = () => {
 
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/account">
-            <Route
-              index
-              element={
-                <ProtectedRoute>
-                  <Account />
-                </ProtectedRoute>
-              } />
-            <Route
-              path="post-help"
-              element={<PostHelp />}
-            />
+         
+            <Route 
+                              path="/account"          
+               element={
+                  <ProtectedRoute>
+                    <Account />
+                  </ProtectedRoute>
+               }/>
+             <Route
+                path="/post-help"
+                element={<ProtectedRoute><PostHelp/></ProtectedRoute>}
+             />
 
-            <Route
-              path="search-help"
-              element={<SearchHelp />}
-            />
-          </Route>
+              <Route
+                path="/search-help"
+                element={<ProtectedRoute><SearchHelp/></ProtectedRoute>}
+             />
         </Routes>
       </AuthContextProvider>
       <NavBar />

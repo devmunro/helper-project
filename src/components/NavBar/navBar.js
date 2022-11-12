@@ -9,11 +9,14 @@ const NavBar = () => {
       {/* Added Search Component here */}
       <Search />
       <ul className="flex justify-around p-4">
-        <li className="mr-2 list-none">
-          <Link to="/search">Search</Link>
+        <li className="mr-3 list-none">
+            <Link to="/search-help">Search</Link>
         </li>
-        <li className="mr-2 list-none">
-          <Link to="/postjob">Post Job</Link>
+        <li className="mr-3 list-none">
+            <Link to="/post-help">Post Job</Link>
+        </li>
+        <li className="mr-3 list-none">
+            <Link to="/account">Account</Link>
         </li>
       </ul>
     </nav>
