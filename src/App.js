@@ -20,24 +20,24 @@ const App = () => {
 
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/account">
+          
             <Route 
-               index             
+                              path="/account"          
                element={
                   <ProtectedRoute>
                     <Account />
                   </ProtectedRoute>
                }/>
              <Route
-                path="post-help"
-                element={<PostHelp/>}
+                path="/post-help"
+                element={<ProtectedRoute><PostHelp/></ProtectedRoute>}
              />
 
               <Route
-                path="search-help"
-                element={<SearchHelp/>}
+                path="/search-help"
+                element={<ProtectedRoute><SearchHelp/></ProtectedRoute>}
              />
-          </Route>     
+               
         </Routes>
       </AuthContextProvider>
     </div>
