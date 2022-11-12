@@ -34,12 +34,12 @@ const App = () => {
                 }/>
                 <Route
                    path="/account/post-help"
-                   element={<PostHelp/>}
+                   element={<ProtectedRoute><PostHelp/></ProtectedRoute>}
                 />
 
                 <Route
                    path="/account/search-help"
-                   element={<SearchHelp/>}
+                   element={<ProtectedRoute><SearchHelp/></ProtectedRoute>}
                 />
 
           </Route>    
