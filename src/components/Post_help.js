@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { collection,addDoc,serverTimestamp } from "firebase/firestore";
+import { collection,addDoc} from "firebase/firestore";
 import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +21,8 @@ const PostHelp=()=>{
       const collectionRef=collection(db,'users');
       await addDoc(collectionRef,{
          ...data,
-/*          timeStamp:serverTimestamp,
          user:user.uid,
+/*          timeStamp:serverTimestamp,
          userName:user.displayName, */
       })
       navigate('/success')

@@ -8,6 +8,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import NavBar from "./components/NavBar/navBar";
 import SearchHelp from "./components/Search_help";
 import PostHelp from "./components/Post_help";
+import Success from "./components/Sucess";
 
 const App = () => {
   return (
@@ -37,7 +38,12 @@ const App = () => {
                 path="search-help"
                 element={<SearchHelp/>}
              />
-          </Route>     
+          </Route>    
+
+          <Route
+             path="/success"
+             element={<Success/>}
+          /> 
         </Routes>
       </AuthContextProvider>
     </div>
