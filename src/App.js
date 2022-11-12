@@ -1,3 +1,4 @@
+
 import React from "react";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
@@ -20,7 +21,7 @@ const App = () => {
 
           <Route path="/signup" element={<Signup />} />
 
-          
+         
             <Route 
                               path="/account"          
                element={
@@ -37,9 +38,9 @@ const App = () => {
                 path="/search-help"
                 element={<ProtectedRoute><SearchHelp/></ProtectedRoute>}
              />
-               
         </Routes>
       </AuthContextProvider>
+      <NavBar />
     </div>
   );
 };
