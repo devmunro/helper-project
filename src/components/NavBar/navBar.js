@@ -18,10 +18,10 @@ const {handleLogout} = UserAuth()
         {pathname !== "/" && pathname !== "/signup" && <Search />}
         <ul className="flex justify-around p-4">
           <li className="mr-3 list-none">
-            <Link to="/search-help">Search</Link>
+            <Link to="/account/search-help">Search</Link>
           </li>
           <li className="mr-3 list-none">
-            <Link to="/post-help">Post Job</Link>
+            <Link to="/account/post-help">Post Job</Link>
           </li>
           <li className="mr-3 list-none">
             <Link to="/account">Account</Link>
