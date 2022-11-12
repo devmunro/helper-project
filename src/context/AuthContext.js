@@ -5,6 +5,7 @@ import {
    signOut,
    onAuthStateChanged} from 'firebase/auth';
 import {auth} from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const UserContext=createContext();
 export const AuthContextProvider=({children})=>{
@@ -32,6 +33,17 @@ export const AuthContextProvider=({children})=>{
       }
    },[])
 
+   const navigate=useNavigate();
+   const handleLogout=async ()=>{
+      try{
+         await logout();
+         navigate('/');
+      }
+      catch(e){
+         console.log(e.message);
+      }
+   }
+
    return (
       <UserContext.Provider
          value={{
@@ -39,6 +51,7 @@ export const AuthContextProvider=({children})=>{
             user,
             logout,
             signIn,
+            handleLogout
          }}
       >
          {children}

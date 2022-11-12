@@ -1,9 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import Search from "../SearchFilter/Search";
+import LogoutButton from "../logout";
+import { UserAuth } from "../../context/AuthContext";
 
 const NavBar = () => {
   const { pathname } = useLocation(); // to hide searchbar and logout
-
+const {handleLogout} = UserAuth()
 
 
   
@@ -25,6 +27,7 @@ const NavBar = () => {
             <Link to="/account">Account</Link>
           </li>
         </ul>
+        {pathname !== "/" && pathname !== "/signup" && <LogoutButton handleLogout={handleLogout}/>}
       </nav>
     );
 };
