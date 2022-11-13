@@ -1,5 +1,3 @@
-import "./Search.css";
-
 const Search = ({ word, update }) => {
   return (
     <div className="bg-blue-300 p-4">
