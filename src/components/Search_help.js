@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { collection, getDocs, onSnapshot, orderBy, query } from "firebase/firestore"; 
 import { db } from "../firebase";
 import Help from "./Help";
+import Search from "./SearchFilter/Search";
 
 const SearchHelp=()=>{
    const [data,setData]=useState([]);
@@ -27,14 +28,8 @@ const SearchHelp=()=>{
    },[])
    return (
       <div>
-         <input 
-            type="text" 
-            ref={searchTerm} 
-            onChange={updateSearch}
-            className="border-2 border-solid, w-full" 
-            placeholder="search your help"
-         />
-
+         <Search update={updateSearch} word={searchTerm}/>
+         
          {data!==[] && (
                   <Help
                      filter={searchValue}
