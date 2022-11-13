@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { collection, getDocs, onSnapshot, orderBy, query } from "firebase/firestore"; 
 import { db } from "../../firebase";
-import Help from "../Help";
+import Help from "./Help";
 import Search from "./Search";
 
 const SearchHelp=()=>{
