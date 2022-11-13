@@ -1,31 +1,32 @@
 import "./Search.css";
-import JSONDATA from './MOCK_DATA.json';
-import { useState } from "react";
 
-const Search = () => {
-    const [search, setSearch] = useState('')
-    return (
-        <div className="Search">
-            <input type="text" placeholder="Search..." onChange={e => { setSearch(e.target.value) }} />
-            {JSONDATA.filter((val) => {
-                if (search == "") {
-                    return val
-                } else if (val.first_name.toLowerCase().includes(search.toLowerCase())) {
-                    return val
-                }
-            }).map((val, key) => {
-                return (<div className="user" key={key}>
-                    {/* Uncomment the code below to check how beuty is the Filter :D */}
-                    {/* <p>{val.first_name}</p> */}
-                </div>
-                );
-
-            })}
-
-        </div>
-    );
+const Search = ({ word, update }) => {
+  return (
+    <div className="bg-blue-300 p-4">
+      <input
+        type="text"
+        ref={word}
+        onChange={update}
+        className="p-2 rounded-m m-2 w-1/2"
+        placeholder="Search Jobs"
+      />
+      <select  id="location" name="location" className="p-2 rounded-m m-2">
+        <option value="london">london</option>
+        <option value="paris">paris</option>
+        <option value="barcelona">barcelona</option>
+        <option value="rome">rome</option>
+      </select>
+      <select id="catergory" name="catergory" className="p-2 rounded-m m-2">
+        <option value="transport">transport</option>
+        <option value="delivery">delivery</option>
+        <option value="cooking">cooking</option>
+      </select>
+      <select id="role" name="role" className="p-2 rounded-m m-2">
+        <option value="temp">temp</option>
+        <option value="perm">perm</option>
+      </select>
+    </div>
+  );
 };
-
-console.log(JSONDATA, "Hey im here!");
 
 export default Search;
