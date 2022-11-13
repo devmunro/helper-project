@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NavBar from "./components/NavBar/navBar";
-import SearchHelp from "./components/Search_help";
+import SearchHelp from "./components/SearchFilter/Search_help";
 import PostHelp from "./components/Post_help";
 import Success from "./components/Sucess";
 
