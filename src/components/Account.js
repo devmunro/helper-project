@@ -28,13 +28,13 @@ const Account = () => {
           <div class="w-full rounded shadow-2xl hover:scale-105">
             <img
               class="w-full"
-              src="https://images.unsplash.com/photo-1618218168350-6e7c81151b64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80"
-              
-                alt="Holding hands"
+              src="https://images.unsplash.com/photo-1618218168350-6e7c81151b64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+              alt="ASK FOR HELP, scrabble pieces"
             />
             <div class="px-6 py-4">
-              <div class="font-bold text-3xl mb-2">Need a helping hand? <span className="text-xl">ClickHere</span></div>
-              
+              <div class="font-bold text-2xl mb-2">
+                Need a helping hand? <span className="text-sm px-4">ClickHere</span>
+              </div>
             </div>
           </div>
         </Link>
@@ -42,16 +42,17 @@ const Account = () => {
           <div class="w-full rounded shadow-2xl hover:scale-105">
             <img
               class="w-full"
-              src="https://images.unsplash.com/photo-1558522195-e1201b090344?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                       alt="Holding hands"
+              src="https://images.unsplash.com/photo-1611223235982-891064f27716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+              alt="scrabble pieces"
             />
             <div class="px-6 py-4">
-              <div class="font-bold text-3xl mb-2">Can you offer assistance? <span className="text-xl">ClickHere</span></div>
-              
+              <div class="font-bold text-2xl mb-2">
+                Can you offer assistance?{" "}
+                <span className="text-sm px-4">ClickHere</span>
+              </div>
             </div>
           </div>
         </Link>
-        
       </div>
     </div>
   );
