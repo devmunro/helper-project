@@ -6,7 +6,7 @@ import Help from "./Help";
 const SearchHelp=()=>{
    const [data,setData]=useState([]);
    const searchTerm=useRef();
-   const [searchValue, setSearchValue]=useState('all');
+   const [searchValue, setSearchValue]=useState('');
 
    const updateSearch=()=>{
       setSearchValue(searchTerm.current.value);
@@ -31,22 +31,17 @@ const SearchHelp=()=>{
             type="text" 
             ref={searchTerm} 
             onChange={updateSearch}
-            className="border-2 border border-solid, w-full" 
+            className="border-2 border-solid, w-full" 
             placeholder="search your help"
          />
 
-         {data!==[] && data.map((doc)=>{
-            return (
+         {data!==[] && (
                   <Help
-                     name={doc.name}
-                     title={doc.title}
-                     age={doc.age}
-                     message={doc.message}
                      filter={searchValue}
                      data={data}
                   />
             )
-         })}
+         }
       </div>
    )
 }
