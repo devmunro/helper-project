@@ -1,4 +1,3 @@
-
 import React from "react";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
@@ -9,7 +8,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import NavBar from "./components/NavBar/navBar";
 import SearchHelp from "./components/SearchFilter/Search_help";
 import PostHelp from "./components/Post_help";
-import About from "./components/aboutus";
 import Success from "./components/Sucess";
 
 const App = () => {
@@ -23,38 +21,39 @@ const App = () => {
 
           <Route path="/signup" element={<Signup />} />
 
+          <Route path="/account">
             <Route
-               path="/account"
-            >
-               <Route 
-                  index       
-                  element={
-                     <ProtectedRoute>
-                       <Account />
-                     </ProtectedRoute>
-                }/>
-                <Route
-                   path="/account/post-help"
-                   element={<ProtectedRoute><PostHelp/></ProtectedRoute>}
-                />
+              index
+              element={
+                <ProtectedRoute>
+                  <Account />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/account/post-help"
+              element={
+                <ProtectedRoute>
+                  <PostHelp />
+                </ProtectedRoute>
+              }
+            />
 
-                <Route
-                   path="/account/search-help"
-                   element={<ProtectedRoute><SearchHelp/></ProtectedRoute>}
-                />
+            <Route
+              path="/account/search-help"
+              element={
+                <ProtectedRoute>
+                  <SearchHelp />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
 
-          </Route>    
+          <Route path="/success" element={<Success />} />
 
-          <Route
-             path="/success"
-             element={<Success/>}
-          /> 
-
+          
         </Routes>
-
-        <About/>
       </AuthContextProvider>
-     
     </div>
   );
 };

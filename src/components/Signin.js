@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import About from "./aboutus";
+
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -25,6 +27,7 @@ const Signin = () => {
   };
 
   return (
+    <div>
     <div className="flex justify-between p-4 bg-blue-400 text-white">
       <div className=" flex flex-col w-[50%]  my-16 mr-9 p-4 mx-auto text-center">
         <h1 className="text-6xl ">Helper</h1>
@@ -75,6 +78,8 @@ const Signin = () => {
           </button>
         </form>
       </div>
+    </div>
+    <About />
     </div>
   );
 };
