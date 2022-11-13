@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import NavBar from "./components/NavBar/navBar";
 import SearchHelp from "./components/SearchFilter/Search_help";
 import PostHelp from "./components/Post_help";
+import About from "./components/aboutus";
 import Success from "./components/Sucess";
 
 const App = () => {
@@ -50,6 +51,8 @@ const App = () => {
           /> 
 
         </Routes>
+
+        <About/>
       </AuthContextProvider>
      
     </div>
