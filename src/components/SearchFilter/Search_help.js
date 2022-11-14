@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { collection, getDocs, onSnapshot, orderBy, query } from "firebase/firestore"; 
+import React, { useEffect, useState, useRef, } from "react";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore"; 
 import { db } from "../../firebase";
 import Help from "./Help";
 import Search from "./Search";
@@ -22,79 +22,69 @@ const SearchHelp=()=>{
       return unsubscribe;
    }
    useEffect(()=>{
-  /*     getUsers(); */
          getUsers();
          searchTerm.current.focus();
    },[])
-
-////////////////
+   
+   ////
    const [filterData,setFilterData]=useState({
       location:'',
       category:'',
       period:'',
     })
-  
-    console.log(filterData)
-  
-    const [dataAlreadyFiltered,setDataAlreadyFiltered]=useState([data]);
-  
+
     const updateFilterData=(e)=>{
-       const {name,value}=e.target;
-       setFilterData(preVal=>{
-          return {
-            ...preVal,
-            [name]:value,
+      const {name,value}=e.target;
+      setFilterData(preVal=>{
+         return {
+           ...preVal,
+           [name]:value,
+         }
+      })
+   }
+
+   const updateResults=()=>{
+      const arr=[];
+       if(filterData.location!=='' &&
+          filterData.category!=='' &&
+          filterData.period!==''
+       ){
+          const el=data.find(el=>el.location===filterData.location && el.category===filterData.category && el.period===filterData.period);
+          console.log(el);
+          if(el){
+            arr.push(el);
           }
+          setData(arr);
+          console.log(data);
+       }else{
+        console.log('Need more specification');
+       }
+    }
+
+    const reset=()=>{
+      getUsers();
+      setFilterData({
+         location:'',
+         category:'',
+         period:'',
        })
     }
     
-    
-    
     useEffect(()=>{
-
-      const updateResults=()=>{
-      
-         if(filterData.location!=='' ||
-            filterData.category!=='' ||
-            filterData.period!==''
-         ){
-            const test=data.filter(el=>
-
-               
-            ( (el.location===filterData.location || el.category===filterData.category || el.period===filterData.period) || (el.location===filterData.location && el.category===filterData.category)
-            ))        
-            
-            
-            return setDataAlreadyFiltered(test);
-           
-            
-         }else{ return  setDataAlreadyFiltered(data)
-          
-          
-         }
-        
-       
-      }
-
-      console.log(filterData);
       updateResults();
-    },[filterData, data])
-
-    /////////////
-
-
-    console.log(dataAlreadyFiltered);
-
-
+    },[filterData])
+   ////
 
    return (
       <div>
-         <Search update={updateSearch} word={searchTerm} filterData={filterData} updateFilterData={updateFilterData} updatedata={data}/>
+         <Search update={updateSearch} word={searchTerm} filterData={filterData} updateFilterData={updateFilterData} />
+         <button onClick={reset}>Reset filters</button>
          
          {data!==[] && (
                   <Help
+                     key={data.user}
                      filter={searchValue}
-                     data={dataAlreadyFiltered}
+                     data={data}
                   />
             )
          }

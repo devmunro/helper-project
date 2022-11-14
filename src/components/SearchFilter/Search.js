@@ -1,7 +1,7 @@
+import React,{} from "react";
 
 
 const Search = ({ word, update, filterData, updateFilterData}) => {
-
 
   return (
     <div className="bg-blue-300 p-4">
@@ -47,3 +47,4 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
 };
 
 export default Search;
+
