@@ -47,3 +47,4 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
 };
 
 export default Search;
+
