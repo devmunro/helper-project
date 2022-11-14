@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { collection, getDocs, onSnapshot, orderBy, query } from "firebase/firestore"; 
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import Help from "./Help";
+import Search from "./Search";
 
 const SearchHelp=()=>{
    const [data,setData]=useState([]);
    const searchTerm=useRef();
-   const [searchValue, setSearchValue]=useState('all');
+   const [searchValue, setSearchValue]=useState('');
 
    const updateSearch=()=>{
       setSearchValue(searchTerm.current.value);
@@ -27,26 +28,15 @@ const SearchHelp=()=>{
    },[])
    return (
       <div>
-         <input 
-            type="text" 
-            ref={searchTerm} 
-            onChange={updateSearch}
-            className="border-2 border border-solid, w-full" 
-            placeholder="search your help"
-         />
-
-         {data!==[] && data.map((doc)=>{
-            return (
+         <Search update={updateSearch} word={searchTerm}/>
+         
+         {data!==[] && (
                   <Help
-                     name={doc.name}
-                     title={doc.title}
-                     age={doc.age}
-                     message={doc.message}
                      filter={searchValue}
                      data={data}
                   />
             )
-         })}
+         }
       </div>
    )
 }

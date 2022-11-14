@@ -15,7 +15,7 @@ const {handleLogout} = UserAuth()
           <h1 className="font-bold p-4">Home</h1>
         </Link>
         {/* Added Search Component here */}
-        {pathname !== "/" && pathname !== "/signup" && <Search />}
+        {/* {pathname !== "/" && pathname !== "/signup" && <Search />} */}
         <ul className="flex justify-around p-4">
           <li className="mr-3 list-none">
             <Link to="/account/search-help">Search</Link>
