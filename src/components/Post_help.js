@@ -1,6 +1,6 @@
 
 import React,{useState} from "react";
-import { collection,addDoc} from "firebase/firestore";
+import { collection,addDoc,serverTimestamp} from "firebase/firestore";
 
 import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
@@ -14,6 +14,9 @@ const PostHelp = () => {
       age: '',
       title: '',
       message: '',
+      location:'',
+      category:'',
+      period:'',
       acceptTerms: false,
    })
 
@@ -25,8 +28,6 @@ const PostHelp = () => {
          ...data,
 
          user:user.uid,
-/*          timeStamp:serverTimestamp,
-         userName:user.displayName, */
 
       })
 
@@ -45,13 +46,14 @@ const PostHelp = () => {
    }
    return (
       <form onSubmit={handleSubmit}>
-         <label htmlFor="name">Name:</label><br />
+         <label htmlFor="name">Name:</label>
          <input
             type="text"
             name="name"
             id="name"
             onChange={handleChange}
             value={data.name}
+            className="border border-solid border-black border-2"
          /><br />
 
          <label htmlFor="age">Age:</label><br />
@@ -61,6 +63,7 @@ const PostHelp = () => {
             id="age"
             onChange={handleChange}
             value={data.age}
+            className="border border-solid border-black border-2"
          /><br />
 
          <label htmlFor="title">Title:</label><br />
@@ -70,12 +73,58 @@ const PostHelp = () => {
             id="title"
             onChange={handleChange}
             value={data.title}
+            className="border border-solid border-black border-2"
          /><br />
 
+          <label htmlFor="location">Location</label><br/>
+         <select
+            id="location"
+            name="location"
+            onChange={handleChange}
+            value={data.location}
+            className="border border-solid border-black border-2"
+         ><br/>
+            <option value="">--choose--</option>
+            <option value="london">London</option>
+            <option value="paris">Paris</option>
+            <option value="barcelona">Barcelona</option>
+            <option value="rome">Rome</option>
+         </select><br/>
+
+         <label htmlFor="category">Category</label><br/>
+         <select
+            id="category"
+            name="category"
+            value={data.category}
+            onChange={handleChange}
+            className="border border-solid border-black border-2"
+         >
+            <option value="">--choose--</option>
+            <option value="transport">Transport</option>
+            <option value="delivery">Delivery</option>
+            <option value="cooking">Cooking</option>
+         </select><br/>
+
+         <label htmlFor="period">Period</label><br/>
+         <select
+            id="period"
+            name="period"
+            onChange={handleChange}
+            value={data.period}
+            className="border border-solid border-black border-2"
+         >
+            <option value="">--choose--</option>
+            <option value="temporal">Temporal</option>
+            <option value="permanent">Permanent</option>
+         </select><br/> 
+
+         <label htmlFor="message">Message:</label><br/>
          <textarea
+            id="message"
             name="message"
             onChange={handleChange}
             value={data.message}
+            className="border border-solid border-black border-2"
          /><br />
 
          <input
@@ -84,6 +133,7 @@ const PostHelp = () => {
             name="acceptTerms"
             onChange={handleChange}
             checked={data.acceptTerms}
+            className="border border-solid border-black border-2"
          />
          <label htmlFor="terms">Accept terms?</label>
 
