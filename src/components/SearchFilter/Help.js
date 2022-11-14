@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const Help = ({ filter, data }) => {
-  console.log(filter);
+/*   console.log(filter); */
 
   const [searchResults, setSearchResults] = useState([]);
 
