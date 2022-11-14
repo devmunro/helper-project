@@ -28,7 +28,7 @@ const SearchHelp=()=>{
    },[])
    return (
       <div>
-         <Search update={updateSearch} word={searchTerm}/>
+         <Search update={updateSearch} word={searchTerm} data={data}/>
          
          {data!==[] && (
                   <Help
