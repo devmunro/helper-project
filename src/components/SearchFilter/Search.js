@@ -1,52 +1,7 @@
-import React,{useState,useEffect,useCallback} from "react";
-import Help from "./Help";
-
-const Search = ({ word, update, data }) => {
-  const [filterData,setFilterData]=useState({
-    location:'',
-    category:'',
-    period:'',
-  })
 
 
-  const [dataAlreadyFiltered,setDataAlreadyFiltered]=useState([]);
+const Search = ({ word, update, filterData, updateFilterData}) => {
 
-  const updateFilterData=(e)=>{
-     const {name,value}=e.target;
-     setFilterData(preVal=>{
-        return {
-          ...preVal,
-          [name]:value,
-        }
-     })
-  }
-  
-  const updateResults=()=>{
-    const arr=[];
-     if(filterData.location!=='' &&
-        filterData.category!=='' &&
-        filterData.period!==''
-     ){
-        const el=data.find(el=>el.location===filterData.location && el.category===filterData.category && el.period===filterData.period);
-        //setDataAlreadyFiltered(el);
-        arr.push(el);
-        console.log(arr);
-        console.log(typeof dataAlreadyFiltered);
-     }else{
-      console.log('Need more specification');
-     }
-     return (
-      <Help
-         filter=""
-         data={arr}
-      />
-   )
-  }
-  
-  useEffect(()=>{
-    console.log(filterData);
-    updateResults();
-  },[filterData])
 
   return (
     <div className="bg-blue-300 p-4">
