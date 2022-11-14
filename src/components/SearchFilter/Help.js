@@ -34,9 +34,9 @@ const Help = ({ filter, data }) => {
                 <h1 className="text-lg font-bold">Job Title: {e.title}</h1>
               </div>
               <div className="p-2 px-8 space-x-1 font-semibold">
-              <span className="bg-indigo-300 p-1">Location</span>
-              <span className="bg-indigo-300 p-1">Catergory</span>
-              <span className="bg-indigo-300 p-1">Temp/Permament</span>
+              <span className="bg-indigo-300 p-1">{e.location}</span>
+              <span className="bg-indigo-300 p-1">{e.category}</span>
+              <span className="bg-indigo-300 p-1">{e.period}</span>
               </div>
               <div className="p-2"> 
               <p> Name: {e.name}</p>
