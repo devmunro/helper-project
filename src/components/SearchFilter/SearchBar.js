@@ -10,14 +10,14 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
         ref={word}
         onChange={update}
         className="p-2 rounded-m m-2 w-1/2"
-        placeholder="Search Jobs"
+        placeholder="Search by Job title/Location or Catergory"
       />
       <select  id="location" className="p-2 rounded-m m-2"
          value={filterData.location}
          onChange={updateFilterData}
          name="location" 
       >
-        <option value="">--Chose--</option>
+        <option value="">--Set Location--</option>
         <option value="london">london</option>
         <option value="paris">paris</option>
         <option value="barcelona">barcelona</option>
@@ -28,11 +28,13 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
          onChange={updateFilterData}
          name="category" 
       >
-        <option value="">--Chose--</option>
+        <option value="">--Set Catergory--</option>
         <option value="transport">transport</option>
         <option value="delivery">delivery</option>
         <option value="cooking">cooking</option>
       </select>
+
+      <span>Reset</span>
           </div>
   );
 };
