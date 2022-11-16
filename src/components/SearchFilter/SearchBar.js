@@ -33,16 +33,7 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
         <option value="delivery">delivery</option>
         <option value="cooking">cooking</option>
       </select>
-      <select id="role"className="p-2 rounded-m m-2"
-         value={filterData.period}
-         onChange={updateFilterData}
-         name="period" 
-      >
-        <option value="">--Chose--</option>
-        <option value="temporal">temp</option>
-        <option value="permanent">perm</option>
-      </select>
-    </div>
+          </div>
   );
 };
 

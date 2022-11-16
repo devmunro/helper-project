@@ -1,14 +1,14 @@
 import React from "react";
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
-import Account from "./components/Account";
+import Signin from "./components/Account/Signin";
+import Signup from "./components/Account/Signup";
+import Account from "./components/Account/Account";
 import { Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/Account/ProtectedRoute";
 import NavBar from "./components/NavBar/navBar";
-import SearchHelp from "./components/SearchFilter/Search_help";
-import PostHelp from "./components/Post_help";
-import Success from "./components/Sucess";
+import SearchHelp from "./components/SearchFilter/SearchFunction";
+import PostHelp from "./components/Add Job/PostJob";
+import Success from "./components/Add Job/Sucess";
 
 const App = () => {
   return (
@@ -50,8 +50,6 @@ const App = () => {
           </Route>
 
           <Route path="/success" element={<Success />} />
-
-          
         </Routes>
       </AuthContextProvider>
     </div>

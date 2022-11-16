@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const Help = ({ filter, data }) => {
-/*   console.log(filter); */
+
 
   const [searchResults, setSearchResults] = useState([]);
 
@@ -57,8 +57,7 @@ const Help = ({ filter, data }) => {
               <div className="p-2 px-8 space-x-1 font-semibold">
               <span className="bg-indigo-300 p-1">Location</span>
               <span className="bg-indigo-300 p-1">Catergory</span>
-              <span className="bg-indigo-300 p-1">Temp/Permament</span>
-              </div>
+                         </div>
               <div className="p-2"> 
               <p> Name: {e.name}</p>
               <p>Age: {e.age}</p>
