@@ -26,6 +26,8 @@ const Help = ({ filter, data }) => {
 
   return (
     <div className="flex flex-col items-center">
+{data.length === 0 && <div className="pt-2 text-2xl font-bold">No Matching Posts</div>}
+
       {filter === "" &&
         data.map((e) => {
           return (
