@@ -1,3 +1,4 @@
+import React,{} from "react";
 
 
 const Search = ({ word, update, filterData, updateFilterData, getUsers, setFilterData}) => {
@@ -12,7 +13,6 @@ const Search = ({ word, update, filterData, updateFilterData, getUsers, setFilte
        period:'',
      })
   }
-
 
   return (
     <div className="bg-blue-300 p-4">
@@ -51,3 +51,4 @@ const Search = ({ word, update, filterData, updateFilterData, getUsers, setFilte
 };
 
 export default Search;
+

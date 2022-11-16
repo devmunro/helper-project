@@ -38,12 +38,12 @@ const Help = ({ filter, data }) => {
           return (
             <div className="w-1/2 border-2 border-indigo-500 border-solid m-4 ">
               <div className="bg-indigo-600 p-4 text-white">
-                <h1 className="text-lg font-bold">Job Title: {e.title}</h1>
+                <h1 className="text-lg font-bold">Job Title: {e.title?e.title:''}</h1>
               </div>
               <div className="p-2 px-8 space-x-1 font-semibold">
-                <span className="bg-indigo-300 p-1">{e.location}</span>
-                <span className="bg-indigo-300 p-1">{e.category}</span>
-                <span className="bg-indigo-300 p-1">{e.period}</span>
+              <span className="bg-indigo-300 p-1">{e.location?e.location:''}</span>
+              <span className="bg-indigo-300 p-1">{e.category?e.category:''}</span>
+              <span className="bg-indigo-300 p-1">{e.period?e.period:''}</span>
               </div>
               <div className="p-2">
                 <p> Name: {e.name}</p>
@@ -59,7 +59,7 @@ const Help = ({ filter, data }) => {
           return (
             <div className="w-1/2 border-2 border-indigo-500 border-solid m-4 ">
               <div className="bg-indigo-600 p-4 text-white">
-                <h1 className="text-lg font-bold">Job Title: {e.title}</h1>
+                <h1 className="text-lg font-bold">Job Title: {e.title?e.title:''}</h1>
               </div>
               <div className="p-2 px-8 space-x-1 font-semibold">
                 <span className="bg-indigo-300 p-1">{e.location}</span>
