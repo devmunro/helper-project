@@ -1,7 +1,18 @@
 import React,{} from "react";
 
 
-const Search = ({ word, update, filterData, updateFilterData}) => {
+const Search = ({ word, update, filterData, updateFilterData, getUsers, setFilterData}) => {
+
+
+
+  const reset=()=>{
+    getUsers();
+    setFilterData({
+       location:'',
+       category:'',
+       period:'',
+     })
+  }
 
   return (
     <div className="bg-blue-300 p-4">
@@ -9,15 +20,15 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
         type="text"
         ref={word}
         onChange={update}
-        className="p-2 rounded-m m-2 w-1/2"
-        placeholder="Search Jobs"
+        className="p-2 mx-10 rounded-m m-2 w-1/2"
+        placeholder="Search by Job title/Location or Catergory"
       />
       <select  id="location" className="p-2 rounded-m m-2"
          value={filterData.location}
-         onChange={updateFilterData}
+         onChange={updateFilterData} 
          name="location" 
       >
-        <option value="">--Chose--</option>
+        <option value="">--Set Location--</option>
         <option value="london">london</option>
         <option value="paris">paris</option>
         <option value="barcelona">barcelona</option>
@@ -28,21 +39,14 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
          onChange={updateFilterData}
          name="category" 
       >
-        <option value="">--Chose--</option>
+        <option value="">--Set Catergory--</option>
         <option value="transport">transport</option>
         <option value="delivery">delivery</option>
         <option value="cooking">cooking</option>
       </select>
-      <select id="role"className="p-2 rounded-m m-2"
-         value={filterData.period}
-         onChange={updateFilterData}
-         name="period" 
-      >
-        <option value="">--Chose--</option>
-        <option value="temporal">temp</option>
-        <option value="permanent">perm</option>
-      </select>
-    </div>
+
+      <button onClick={reset}>Reset filters</button>
+          </div>
   );
 };
 

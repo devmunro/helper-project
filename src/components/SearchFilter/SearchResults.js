@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const Help = ({ filter, data }) => {
-
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
@@ -10,10 +9,14 @@ const Help = ({ filter, data }) => {
       if (query !== "") {
         const newresults = data.filter((e) => {
           return (
+            
             e.title.toLowerCase().includes(query.toLowerCase()) ||
-            e.message.toLowerCase().includes(query.toLowerCase())
+            e.location.toLowerCase().includes(query.toLowerCase()) ||
+            e.category.toLowerCase().includes(query.toLowerCase())
           );
         });
+
+        
         setSearchResults(newresults);
       }
     };
@@ -22,9 +25,14 @@ const Help = ({ filter, data }) => {
   }, [filter, data]);
 
   console.log(searchResults);
+  console.log(data)
 
   return (
     <div className="flex flex-col items-center">
+      {((data.length === 0 )|| (searchResults.length === 0) && (filter !== "") )&& (
+        <div className="pt-2 text-2xl font-bold">No Matching Posts</div>
+      )}
+
       {filter === "" &&
         data.map((e) => {
           return (
@@ -37,10 +45,10 @@ const Help = ({ filter, data }) => {
               <span className="bg-indigo-300 p-1">{e.category?e.category:''}</span>
               <span className="bg-indigo-300 p-1">{e.period?e.period:''}</span>
               </div>
-              <div className="p-2"> 
-              <p> Name: {e.name}</p>
-              <p>Age: {e.age}</p>
-              <p>Description: {e.message}</p>
+              <div className="p-2">
+                <p> Name: {e.name}</p>
+                <p>Age: {e.age}</p>
+                <p>Description: {e.message}</p>
               </div>
             </div>
           );
@@ -54,14 +62,13 @@ const Help = ({ filter, data }) => {
                 <h1 className="text-lg font-bold">Job Title: {e.title?e.title:''}</h1>
               </div>
               <div className="p-2 px-8 space-x-1 font-semibold">
-              <span className="bg-indigo-300 p-1">Location</span>
-              <span className="bg-indigo-300 p-1">Catergory</span>
-              <span className="bg-indigo-300 p-1">Temp/Permament</span>
+                <span className="bg-indigo-300 p-1">{e.location}</span>
+                <span className="bg-indigo-300 p-1">Catergory</span>
               </div>
-              <div className="p-2"> 
-              <p> Name: {e.name}</p>
-              <p>Age: {e.age}</p>
-              <p>Description: {e.message}</p>
+              <div className="p-2">
+                <p> Name: {e.name}</p>
+                <p>Age: {e.age}</p>
+                <p>Description: {e.message}</p>
               </div>
             </div>
           );
