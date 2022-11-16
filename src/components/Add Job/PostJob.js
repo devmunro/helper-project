@@ -53,7 +53,7 @@ const PostHelp = () => {
             id="name"
             onChange={handleChange}
             value={data.name}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          /><br />
 
          <label htmlFor="age">Age:</label><br />
@@ -63,7 +63,7 @@ const PostHelp = () => {
             id="age"
             onChange={handleChange}
             value={data.age}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          /><br />
 
          <label htmlFor="title">Title:</label><br />
@@ -73,7 +73,7 @@ const PostHelp = () => {
             id="title"
             onChange={handleChange}
             value={data.title}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          /><br />
 
           <label htmlFor="location">Location</label><br/>
@@ -82,7 +82,7 @@ const PostHelp = () => {
             name="location"
             onChange={handleChange}
             value={data.location}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          ><br/>
             <option value="">--choose--</option>
             <option value="london">London</option>
@@ -97,7 +97,7 @@ const PostHelp = () => {
             name="category"
             value={data.category}
             onChange={handleChange}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          >
             <option value="">--choose--</option>
             <option value="transport">Transport</option>
@@ -111,7 +111,7 @@ const PostHelp = () => {
             name="period"
             onChange={handleChange}
             value={data.period}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          >
             <option value="">--choose--</option>
             <option value="temporal">Temporal</option>
@@ -124,7 +124,7 @@ const PostHelp = () => {
             name="message"
             onChange={handleChange}
             value={data.message}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          /><br />
 
          <input
@@ -133,7 +133,7 @@ const PostHelp = () => {
             name="acceptTerms"
             onChange={handleChange}
             checked={data.acceptTerms}
-            className="border border-solid border-black border-2"
+            className=" border-solid border-black border-2"
          />
          <label htmlFor="terms">Accept terms?</label>
 
