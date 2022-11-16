@@ -1,6 +1,17 @@
 
 
-const Search = ({ word, update, filterData, updateFilterData}) => {
+const Search = ({ word, update, filterData, updateFilterData, getUsers, setFilterData}) => {
+
+
+
+  const reset=()=>{
+    getUsers();
+    setFilterData({
+       location:'',
+       category:'',
+       period:'',
+     })
+  }
 
 
   return (
@@ -34,7 +45,7 @@ const Search = ({ word, update, filterData, updateFilterData}) => {
         <option value="cooking">cooking</option>
       </select>
 
-      <span>Reset</span>
+      <button onClick={reset}>Reset filters</button>
           </div>
   );
 };

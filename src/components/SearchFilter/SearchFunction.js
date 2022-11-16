@@ -100,6 +100,9 @@ const SearchHelp = () => {
         filterData={filterData}
         updateFilterData={updateFilterData}
         updatedata={data}
+        getUsers={getUsers}
+        setFilterData={setFilterData}
+
       />
 
       {data !== [] && <Help filter={searchValue} data={dataAlreadyFiltered} />}
