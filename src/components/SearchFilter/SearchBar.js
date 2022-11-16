@@ -20,12 +20,12 @@ const Search = ({ word, update, filterData, updateFilterData, getUsers, setFilte
         type="text"
         ref={word}
         onChange={update}
-        className="p-2 rounded-m m-2 w-1/2"
+        className="p-2 mx-10 rounded-m m-2 w-1/2"
         placeholder="Search by Job title/Location or Catergory"
       />
       <select  id="location" className="p-2 rounded-m m-2"
          value={filterData.location}
-         onChange={updateFilterData}
+         onChange={updateFilterData} 
          name="location" 
       >
         <option value="">--Set Location--</option>
