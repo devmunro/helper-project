@@ -1,6 +1,7 @@
 import React from "react";
 import { UserAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
+import UsersPost from "./UsersPost";
 
 const Account = () => {
   const { user } = UserAuth();
@@ -54,6 +55,7 @@ const Account = () => {
           </div>
         </Link>
       </div>
+      <UsersPost />
     </div>
   );
 };
