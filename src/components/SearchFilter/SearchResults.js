@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Help = ({ filter, data }) => {
   const [searchResults, setSearchResults] = useState([]);
@@ -33,6 +34,8 @@ const Help = ({ filter, data }) => {
         <div className="pt-2 text-2xl font-bold">No Matching Posts</div>
       )}
 
+
+
       {filter === "" &&
         data.map((e) => {
           return (
@@ -50,6 +53,7 @@ const Help = ({ filter, data }) => {
                 <p>Age: {e.age}</p>
                 <p>Description: {e.message}</p>
               </div>
+              <Link to={`${e.id}`}>Click</Link>
             </div>
           );
         })}
