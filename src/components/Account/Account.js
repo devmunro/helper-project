@@ -9,7 +9,7 @@ const Account = () => {
   return (
     <div>
       <div className="border-2 border-blue-400 relative  mx-auto">
-        <div className="flex justify-around p-4 bg-blue-400 text-white">
+        <div className="flex justify-between p-4 bg-blue-400 text-white">
           <h1 className="text-2xl font-bold ">Dashboard</h1>
           <p>You are logged in as: {user && user.email}</p>
           {/*<p>Your profile photo:</p>
@@ -21,8 +21,10 @@ const Account = () => {
         </div>
       )}*/}
         </div>
+        <div className="px-4 bg-blue-400 text-white">Welcome {user.name}</div>
       </div>
-
+      
+      <UsersPost />
       <div className="flex w-1/2 mt-10">
         <Link to="/account/post-help">
           <div className="w-1/2 rounded shadow-2xl hover:scale-105">
@@ -55,7 +57,7 @@ const Account = () => {
           </div>
         </Link>
       </div>
-      <UsersPost />
+      
     </div>
   );
 };
