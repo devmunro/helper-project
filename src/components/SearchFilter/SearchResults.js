@@ -53,7 +53,7 @@ const Help = ({ filter, data }) => {
                 <p>Age: {e.age}</p>
                 <p>Description: {e.message}</p>
               </div>
-              <Link to={`/${e.id}`}>Click</Link>
+              <Link to={`${e.id}`}>Click</Link>
             </div>
           );
         })}

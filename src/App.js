@@ -17,43 +17,46 @@ const App = () => {
     <div className="App">
       <AuthContextProvider>
         <DatabaseProvider>
-        <NavBar />
+          <NavBar />
 
-        <Routes>
-          <Route exact path="/" element={<Signin />} />
+          <Routes>
+            <Route exact path="/" element={<Signin />} />
 
-          <Route path="/signup" element={<Signup />} />
-
-          <Route path="/account">
+            <Route path="/signup" element={<Signup />} />
             <Route
-              index
-              element={
-                <ProtectedRoute>
-                  <Account />
-                </ProtectedRoute>
-              }
+              path="/account/search-help/:id"
+              element={<SinglePostPage />}
             />
-            <Route
-              path="/account/post-help"
-              element={
-                <ProtectedRoute>
-                  <PostHelp />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/account">
+              <Route
+                index
+                element={
+                  <ProtectedRoute>
+                    <Account />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/account/post-help"
+                element={
+                  <ProtectedRoute>
+                    <PostHelp />
+                  </ProtectedRoute>
+                }
+              />
 
-            <Route
-              path="/account/search-help"
-              element={
-                <ProtectedRoute>
-                  <SearchHelp />
-                </ProtectedRoute>
-              }
-            />
-          </Route>
-          <Route exact path="/:id" element={<SinglePostPage />}></Route>
-          <Route path="/success" element={<Success />} />
-        </Routes>
+              <Route
+                path="/account/search-help"
+                element={
+                  <ProtectedRoute>
+                    <SearchHelp />
+                  </ProtectedRoute>
+                }
+              ></Route>
+            </Route>
+
+            <Route path="/success" element={<Success />} />
+          </Routes>
         </DatabaseProvider>
       </AuthContextProvider>
     </div>
