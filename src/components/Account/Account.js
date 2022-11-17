@@ -2,6 +2,7 @@ import React from "react";
 import { UserAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 import UsersPost from "./UsersPost";
+import UsersApplied from "./UserAppliedBoard";
 
 const Account = () => {
   const { user } = UserAuth();
@@ -25,6 +26,7 @@ const Account = () => {
       </div>
       
       <UsersPost />
+      <UsersApplied/>
       <div className="flex w-1/2 mt-10">
         <Link to="/account/post-help">
           <div className="w-1/2 rounded shadow-2xl hover:scale-105">
