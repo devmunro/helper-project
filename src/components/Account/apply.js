@@ -1,27 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { collection, addDoc } from "firebase/firestore";
-
+import { AppliedContext } from "../../context/AppliedContext"
 import { db } from "../../firebase";
 import { UserAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 
-const Apply = ({postID, postOwner}) => {
+const Apply = ({postID}) => {
    const { user } = UserAuth();
-  const [data, setData] = useState({
-    name: "",
-  });
+   const { appliedData } = useContext(AppliedContext);
 
+   const matchPost = appliedData.filter((e) => e.user === user.uid);
+console.log(matchPost)
 
+const result = matchPost.filter((e => e.PostID === postID))
 
-console.log(data)
+console.log(result)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data);
+    
     const collectionRef = collection(db, "applied")
     console.log(collectionRef);
     await addDoc(collectionRef, {
-      ...data,
-    
+          
       user: user.uid,
       PostID : postID,
           });
@@ -39,12 +41,16 @@ console.log(data)
 //     });
 //   };
   return (
+    
+    
     <div className="w-1/2">
-      <form onSubmit={handleSubmit}>
         
-        <button type="submit" className="bg-blue-200">Apply</button>
+      <form onSubmit={handleSubmit}>
+        {(result.length > 0) && <button disabled type="submit" className="bg-blue-200">YOU ALREADY APPLIED</button> }
+        {(result.length === 0) && <button type="submit" className="bg-blue-400">APPLY</button> }
       </form>
     </div>
+    
   );
 };
 
