@@ -11,12 +11,15 @@ import PostHelp from "./components/Add Job/PostJob";
 import Success from "./components/Add Job/Sucess";
 import { DatabaseProvider } from "./context/DatabaseContext";
 import SinglePostPage from "./components/SearchFilter/singlePostPage";
+import { AppliedProvider } from "./context/AppliedContext";
+
 
 const App = () => {
   return (
     <div className="App">
       <AuthContextProvider>
         <DatabaseProvider>
+        <AppliedProvider>
           <NavBar />
 
           <Routes>
@@ -57,6 +60,8 @@ const App = () => {
 
             <Route path="/success" element={<Success />} />
           </Routes>
+          
+        </AppliedProvider>
         </DatabaseProvider>
       </AuthContextProvider>
     </div>

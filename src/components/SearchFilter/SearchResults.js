@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Apply from "../Account/apply";
 
 const Help = ({ filter, data }) => {
   const [searchResults, setSearchResults] = useState([]);
@@ -54,6 +55,7 @@ const Help = ({ filter, data }) => {
                 <p>Description: {e.message}</p>
               </div>
               <Link to={`${e.id}`}>Click</Link>
+              <Apply postID={e.id} postOwner={e.user}/>
             </div>
           );
         })}

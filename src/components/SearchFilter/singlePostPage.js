@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { DatabaseContext } from "../../context/DatabaseContext";
+import Apply from "../Account/apply";
+import { Link } from "react-router-dom";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
@@ -30,11 +32,14 @@ export default function SinglePostPage() {
 
  
 
-  console.log(singlePost);
+  console.log(singlePost.title);
   return (
     <div>
+      <Link className="font-bold "to="/account/search-help">BACK</Link>
       {loading && <p>...loading</p>}
-      {!loading && <p>{singlePost[0].title}</p>}
+      {!loading && singlePost.map((e) => {return (<div><div>{e.title} <Apply postID={e.id}/></div> 
+      </div>)})}
+      
     </div>
   );
 }
