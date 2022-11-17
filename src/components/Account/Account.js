@@ -8,24 +8,24 @@ const Account = () => {
 
   return (
     <div>
-      <div className="border-2 border-indigo-700 p-4 relative  mx-auto">
-        <div className="flex justify-between p-4 bg-indigo-700 text-white">
+      <div className="border-2 border-blue-400 relative  mx-auto">
+        <div className="flex justify-around p-4 bg-blue-400 text-white">
           <h1 className="text-2xl font-bold ">Dashboard</h1>
           <p>You are logged in as: {user && user.email}</p>
           {/*<p>Your profile photo:</p>
         {user.photoURL ? (
         <img src={user.photoURL} alt="profile" />
       ) : (
-        <div className="border border-black rounded-full w-5 flex content-center">
+        <div className="border border-black rounded-full w-5bg-blue-400 flex content-center">
           {user.email.slice(0, 1)}
         </div>
       )}*/}
         </div>
       </div>
 
-      <div className="flex w-full mt-10">
+      <div className="flex w-1/2 mt-10">
         <Link to="/account/post-help">
-          <div className="w-full rounded shadow-2xl hover:scale-105">
+          <div className="w-1/2 rounded shadow-2xl hover:scale-105">
             <img
               className="w-full"
               src="https://images.unsplash.com/photo-1618218168350-6e7c81151b64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
@@ -40,7 +40,7 @@ const Account = () => {
           </div>
         </Link>
         <Link to="/account/search-help">
-          <div class="w-full rounded shadow-2xl hover:scale-105">
+          <div class="w-1/2 rounded shadow-2xl hover:scale-105">
             <img
               class="w-full"
               src="https://images.unsplash.com/photo-1611223235982-891064f27716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"

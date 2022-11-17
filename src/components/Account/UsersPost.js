@@ -28,8 +28,11 @@ export default function UsersPost() {
  console.log(trial)
 
   return (
+    <div>
+    {trial.length > 0 && 
     trial.map((e) => {return (
         <div>{e.name}</div>
-    )})
+    )}) }
+    </div>
   )
 }
