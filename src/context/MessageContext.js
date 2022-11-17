@@ -5,14 +5,14 @@ import { db } from "../firebase";
 export const MessageContext = createContext();
 
 export const MessageProvider = ({ children }) => {
-  const [data, setData] = useState([]);
+  const [messageData, setMessageData] = useState([]);
  
   //get db Firebase
   const getUsers = async () => {
     const collectionRef = collection(db, "messages");
     const q = query(collectionRef, orderBy("name", "desc"));
     const unsubscribe = onSnapshot(q, (snapshot) => {
-      setData(
+        setMessageData(
         snapshot.docs.map((doc) => ({
           ...doc.data(),
           // id: doc.user ? doc.user : "",
@@ -31,8 +31,8 @@ export const MessageProvider = ({ children }) => {
 
 
   const value = {
-    data,
-    setData,
+    messageData,
+    setMessageData,
     
   };
   return (
