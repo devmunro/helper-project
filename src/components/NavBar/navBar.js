@@ -8,7 +8,7 @@ const NavBar = () => {
   const { handleLogout } = UserAuth();
 
   return (
-    <nav className="flex justify-end text-lg p-2 bg-blue-400 text-white">
+    <nav className="flex justify-end text-lg p-2 bg-blue-600 text-white">
       <Link to="/">
         <h1 className="font-bold p-4">Home</h1>
       </Link>
