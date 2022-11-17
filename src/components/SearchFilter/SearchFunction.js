@@ -17,7 +17,7 @@ const SearchHelp = () => {
   } = useContext(DatabaseContext);
 
 
-
+console.log(data)
  
   return (
     <div>
