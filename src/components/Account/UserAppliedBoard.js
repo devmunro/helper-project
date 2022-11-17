@@ -5,15 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function UsersApplied() {
   const {
-    updateSearch,
-    searchTerm,
-    filterData,
-    updateFilterData,
-    data,
-    getUsers,
-    setFilterData,
-    searchValue,
-    dataAlreadyFiltered,
+        data,
+    
   } = useContext(DatabaseContext);
 
   const { user } = UserAuth();
@@ -21,7 +14,7 @@ export default function UsersApplied() {
   console.log(user);
   console.log(data);
 
-  const trial = data.filter((e) => e.user === user.uid);
+  const trial = data.filter((e) => e.id === user.uid);
   console.log(trial);
 
   return (

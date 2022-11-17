@@ -12,6 +12,8 @@ import Success from "./components/Add Job/Sucess";
 import { DatabaseProvider } from "./context/DatabaseContext";
 import SinglePostPage from "./components/SearchFilter/singlePostPage";
 
+
+
 const App = () => {
   return (
     <div className="App">
@@ -57,6 +59,7 @@ const App = () => {
 
             <Route path="/success" element={<Success />} />
           </Routes>
+          
         </DatabaseProvider>
       </AuthContextProvider>
     </div>
