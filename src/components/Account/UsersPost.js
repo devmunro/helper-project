@@ -25,7 +25,7 @@ export default function UsersPost() {
   console.log(trial);
 
   return (
-    <div className="w-90 m-2 p-2 bg-indigo-900">
+    <div className="w-90 m-2 p-2 bg-indigo-900 ">
       <h2 className="text-lg font-semibold bg-blue-300 w-max px-2">
         Your current Job Posts
       </h2>
@@ -42,7 +42,7 @@ export default function UsersPost() {
           })}
         <Link
           to="/account/post-help"
-          className=" flex flex-col w-1/3 p-4 m-2 bg-blue-100 border-black border-dotted border-2 text-center hover:scale-105 hover:border-l-8 hover:border-r-8"
+          className=" flex flex-col w-max p-4 m-2 bg-blue-100 border-black border-dotted border-2 text-center hover:scale-105 hover:border-l-8 hover:border-r-8"
         >
           <p className="font-extrabold text-7xl">+</p>
           <p>Add Post</p>
