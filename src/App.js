@@ -9,11 +9,13 @@ import NavBar from "./components/NavBar/navBar";
 import SearchHelp from "./components/SearchFilter/SearchFunction";
 import PostHelp from "./components/Add Job/PostJob";
 import Success from "./components/Add Job/Sucess";
+import { DatabaseProvider } from "./context/DatabaseContext";
 
 const App = () => {
   return (
     <div className="App">
       <AuthContextProvider>
+        <DatabaseProvider>
         <NavBar />
 
         <Routes>
@@ -51,6 +53,7 @@ const App = () => {
 
           <Route path="/success" element={<Success />} />
         </Routes>
+        </DatabaseProvider>
       </AuthContextProvider>
     </div>
   );
