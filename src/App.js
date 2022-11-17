@@ -10,6 +10,7 @@ import SearchHelp from "./components/SearchFilter/SearchFunction";
 import PostHelp from "./components/Add Job/PostJob";
 import Success from "./components/Add Job/Sucess";
 import { DatabaseProvider } from "./context/DatabaseContext";
+import SinglePostPage from "./components/SearchFilter/singlePostPage";
 
 const App = () => {
   return (
@@ -50,7 +51,7 @@ const App = () => {
               }
             />
           </Route>
-
+          <Route exact path="/:id" element={<SinglePostPage />}></Route>
           <Route path="/success" element={<Success />} />
         </Routes>
         </DatabaseProvider>

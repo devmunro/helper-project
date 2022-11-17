@@ -22,7 +22,8 @@ export const DatabaseProvider = ({ children }) => {
       setData(
         snapshot.docs.map((doc) => ({
           ...doc.data(),
-          id: doc.user ? doc.user : "",
+          // id: doc.user ? doc.user : "",
+          id: doc.id
         }))
       );
     });
