@@ -9,8 +9,8 @@ const NavBar = () => {
   const { handleLogout } = UserAuth();
 
   return (
-    <nav className="flex justify-end text-lg p-1 bg-blue-600 text-white">
-      <div className=" flex justify-end text-lg p-1 bg-blue-600 text-white md:visible collapse">
+    <nav className="flex justify-end text-lg p-1 bg-blue-400 text-white">
+      <div className=" flex justify-end text-lg p-1 text-white md:visible collapse">
       <Link to="/">
         <h1 className="font-bold p-1 ">Home</h1>
       </Link>
