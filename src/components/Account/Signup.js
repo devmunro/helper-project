@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
-import About from "../../aboutus";
+import About from "./aboutus";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -26,11 +26,11 @@ const Signup = () => {
   };
   return (
     <div>
-      <div className="flex justify-between p-4 bg-blue-400 text-white">
-        <div className=" flex flex-col w-[50%]  my-16 mr-9 p-4 mx-auto text-center">
-          <h1 className="text-6xl ">Helper</h1>
-          <h2 className="text-3xl ">Give a helping hand</h2>
-          <p className="w-[65%] text-justify my-12 mx-auto">
+      <div className="lg:flex  md:justify-between  p-2 lg:p-5 bg-blue-400 text-white">
+        <div className=" lg:flex flex-col lg:w-1/2 w-full  p-4 mx-auto text-center">
+          <h1 className="text-6xl m-2">Helper</h1>
+          <h2 className="text-3xl m-2">Give a helping hand</h2>
+          <p className="md:w-[65%] md:my-12 md-2 w-[85%] text-justify mx-auto">
             consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -40,7 +40,9 @@ const Signup = () => {
             anim id est laborum.
           </p>
         </div>
-        <div className="w-[50%] my-16 mr-9 p-4">
+
+        {/* sign up form */}
+        <div className="lg:w-1/2 w-[85%] mx-auto p-4">
           <div>
             <h1 className="text-2xl font-bold py-2">
               Sign up for a free account
