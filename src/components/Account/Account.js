@@ -42,12 +42,16 @@ const Account = () => {
               <UsersPost />
             
           </div>
+          
         </div>
+        <div className=" flex m-2 w-full rounded  text-white shadow-xl">
+            
+              <UsersApplied />
+            
+          </div>
       </div>
 
-      {/*       
-      <UsersPost />
-      <UsersApplied/> */}
+     
     </div>
   );
 };

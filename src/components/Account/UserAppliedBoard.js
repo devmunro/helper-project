@@ -22,22 +22,37 @@ const fin = result.map((e) => e)
 console.log(result)
 
   return (
-    <div className="w-90 m-2 p-2 bg-indigo-900 ">
-      <h2 className="text-lg font-semibold bg-blue-300 w-max px-2">
-        Your Applied Jobs
-      </h2>
-      <div className="w-full flex ">
-        {result.length > 0 &&
+
+    // this
+    
+
+    // this
+
+    <div className="w-full m-1 p-2 bg-blue-200 ">
+      <div className="flex justify-between  bg-blue-400 px-2">
+        <h2 className="text-2xl  p-2 font-semibold">Applied</h2>
+        
+      </div>
+      <div>
+      {result.length > 0 &&
           result.map((e) => {
             return (
-              <div className="w-1/3 p-4 m-2 bg-blue-100 rounded">
-                <h1 className="font-bold"> {e[0].title}</h1>
-                <p>{e[0].message}</p>
-                <p className="font-semibold">{e[0].location.toUpperCase()}</p>
-              </div>
+              <Link className="" to={`search-help/${e[0].id}`}>
+                <div className=" flex justify-between p-4 m-2 bg-blue-700 rounded">
+                  <div className="">
+                    <h1 className="font-bold"> {e[0].title}</h1>
+                    <p>{e[0].brief}</p>
+                    <p className="font-semibold">{e[0].location.toUpperCase()}</p>
+                  </div>
+                  <div className="flex-col ">
+                    
+                    
+                  </div>
+                </div>
+                <hr className="border-black" />
+              </Link>
             );
           })}
-       
       </div>
     </div>
   );
