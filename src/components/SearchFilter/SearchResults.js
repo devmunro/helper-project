@@ -55,7 +55,7 @@ const Help = ({ filter, data }) => {
                 <p>Description: {e.message}</p>
               </div>
               <Link to={`${e.id}`}>Click</Link>
-              <Apply postID={e.id} postOwner={e.user}/>
+              
             </div>
           );
         })}
