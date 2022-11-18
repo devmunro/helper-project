@@ -4,13 +4,17 @@ import { useContext } from "react";
 import { DatabaseContext } from "../../context/DatabaseContext";
 import { UserAuth } from "../../context/AuthContext";
 import Apply from "../Account/apply";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
   const { user } = UserAuth();
 
- 
+  const navigate = useNavigate()
+ const handleBack = () => {
+  navigate(-1)
+
+ }
 
   let { id } = useParams();
 
@@ -34,9 +38,9 @@ console.log(postee)
 console.log(user)
   return (
     <div>
-      <Link className="font-bold " to="/account/search-help">
+      <button className="font-bold" onClick={handleBack}>
         BACK
-      </Link>
+      </button>
       {loading && <p>...loading</p>}
       {!loading &&
         singlePost.map((e) => {

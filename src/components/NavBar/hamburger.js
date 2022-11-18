@@ -21,6 +21,7 @@ const handleMenu = () => {
         setOpen(true)
         setImage(close)
     }
+   
 }
   return (
     <div>
