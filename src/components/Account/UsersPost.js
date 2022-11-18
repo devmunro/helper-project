@@ -12,9 +12,9 @@ export default function UsersPost() {
 
   return (
     <div className="w-full m-1 p-2 bg-blue-200 ">
-      <div className="flex justify-between  bg-blue-400 px-2">
-        <h2 className="text-2xl  p-2 font-semibold">Ongoing Job Posts</h2>
-        <Link className="rounded-md m-2 p-1 bg-blue-900" to="/account/post-help">
+      <div className="flex justify-between bg-blue-400 px-2">
+        <h2 className="md:text-2xl  text-xl p-2 py-4 font-semibold">Ongoing Job Posts</h2>
+        <Link className="rounded-md m-2 px-2 bg-blue-900" to="/account/post-help">
           Add Post <span className="text-2xl">+</span>
         </Link>
       </div>
@@ -23,10 +23,10 @@ export default function UsersPost() {
           matchUser.map((e) => {
             return (
               <Link className="" to={`search-help/${e.id}`}>
-                <div className=" flex justify-between p-4 m-2 bg-blue-700 rounded">
-                  <div className="">
+                <div className=" flex justify-between md:p-4 p-2 md:m-2  bg-blue-700 rounded">
+                  <div className="w-2/3 m-1">
                     <h1 className="font-bold"> {e.title}</h1>
-                    <p>{e.brief}</p>
+                    <p className=" md:text-md text-sm ">{e.brief}</p>
                     <p className="font-semibold">{e.location.toUpperCase()}</p>
                   </div>
                   <div className="flex-col ">
@@ -35,10 +35,10 @@ export default function UsersPost() {
                       <div className="flex p-2 bg-blue-100 text-blue-600 rounded">
                         <img
                           alt="mail"
-                          className="w-10"
+                          className="md:w-10 w-8"
                           src="https://cdn-icons-png.flaticon.com/512/761/761755.png"
                         ></img>
-                        <p className="font-semibold p-2">RESPONSES</p>
+                        <p className="font-semibold md:p-2 md:m-2 m-1 p-1 w-32 md:text-lg text-sm">RESPONSES</p>
                       </div>
                     </Link>
                   </div>

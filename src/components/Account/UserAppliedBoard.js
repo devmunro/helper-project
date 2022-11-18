@@ -30,7 +30,7 @@ console.log(result)
 
     <div className="w-full m-1 p-2 bg-blue-200 ">
       <div className="flex justify-between  bg-blue-400 px-2">
-        <h2 className="text-2xl  p-2 font-semibold">Applied</h2>
+        <h2 className="md:text-2xl  text-xl  p-2 font-semibold">Applied</h2>
         
       </div>
       <div>
