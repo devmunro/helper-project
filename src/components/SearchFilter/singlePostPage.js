@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { DatabaseContext } from "../../context/DatabaseContext";
+import { UserAuth } from "../../context/AuthContext";
 import Apply from "../Account/apply";
 import { Link } from "react-router-dom";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
+  const { user } = UserAuth();
+
+  const postee = data.filter((e) => e.user === user.uid);
 
   let { id } = useParams();
 
@@ -46,12 +50,12 @@ export default function SinglePostPage() {
                   <li>applied</li>
                 </ul>
               </div>
-              <div className="w-1/2">
-                {" "}
-                <button>
-                  <Apply postID={e.id} postUser={e.user} />{" "}
-                </button>{" "}
-              </div>
+             
+                
+                
+                 {!postee &&  <div className="w-1/2"><Apply postID={e.id} postUser={e.user} /></div>} 
+                
+              
             </div>
           );
         })}
