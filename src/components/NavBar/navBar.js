@@ -33,7 +33,7 @@ const NavBar = () => {
 
       
 </div>
-<div className="  md:collapse">
+<div className="  md:invisible">
 <Hamburger />
 </div>
     </nav>
