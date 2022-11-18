@@ -49,7 +49,7 @@ export default function SinglePostPage() {
               <div className="w-1/2">
                 {" "}
                 <button>
-                  <Apply postID={e.id} />{" "}
+                  <Apply postID={e.id} postUser={e.user} />{" "}
                 </button>{" "}
               </div>
             </div>

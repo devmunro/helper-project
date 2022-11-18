@@ -12,6 +12,7 @@ const PostHelp = () => {
     name: "",
     age: "",
     title: "",
+    breif: "",
     message: "",
     location: "",
     category: "",
@@ -86,16 +87,27 @@ const PostHelp = () => {
         className=" border-solid border-black border-2 w-1/2 p-1"
       />
       
-
-      <label htmlFor="message" className="m-4">Description:</label>
+      <label htmlFor="message" className="m-4">Brief description:</label>
+      
+      <textarea
+        id="brief"
+        name="brief"
+        onChange={handleChange}
+        value={data.brief}
+        max-length="20"
+        placeholder="a brief description "
+        className=" border-solid border-black border-2 h-16 w-3/4 p-2"
+      />
+      <label htmlFor="message" className="m-4">Full description:</label>
       
       <textarea
         id="message"
         name="message"
         onChange={handleChange}
         value={data.message}
+        minlength="100"
         placeholder="a brief description of the help you need"
-        className=" border-solid border-black border-2 h-24 w-3/4 p-2"
+        className=" border-solid border-black border-2 h-36 w-full p-2"
       />
 <fieldset className="flex space-x-2 m-4">
       <label htmlFor="location">Location</label>

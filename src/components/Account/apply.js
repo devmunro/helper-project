@@ -3,9 +3,9 @@ import { collection, addDoc } from "firebase/firestore";
 import { AppliedContext } from "../../context/AppliedContext";
 import { db } from "../../firebase";
 import { UserAuth } from "../../context/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
-const Apply = ({ postID }) => {
+const Apply = ({ postID, postUser }) => {
   const { user } = UserAuth();
   const { appliedData } = useContext(AppliedContext);
   const navigate = useNavigate();
@@ -30,6 +30,7 @@ const Apply = ({ postID }) => {
       ...response,
       user: user.uid,
       PostID: postID,
+      PostOwner: postUser
     });
 
     navigate("/success");
