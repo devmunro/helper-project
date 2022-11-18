@@ -10,7 +10,7 @@ export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
   const { user } = UserAuth();
 
-  const postee = data.filter((e) => e.user === user.uid);
+ 
 
   let { id } = useParams();
 
@@ -29,8 +29,9 @@ export default function SinglePostPage() {
   }, [data, id]);
 
   console.log(data);
-
-  console.log(singlePost.title);
+  const postee = singlePost.filter((e) => e.user === user.uid);
+console.log(postee)
+console.log(user)
   return (
     <div>
       <Link className="font-bold " to="/account/search-help">
@@ -53,7 +54,7 @@ export default function SinglePostPage() {
              
                 
                 
-                 {!postee &&  <div className="w-1/2"><Apply postID={e.id} postUser={e.user} /></div>} 
+                 {!postee.length > 0 &&  <div className="w-1/2"><Apply postID={e.id} postUser={e.user} /></div>} 
                 
               
             </div>
