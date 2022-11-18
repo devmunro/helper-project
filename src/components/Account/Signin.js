@@ -41,7 +41,7 @@ const Signin = () => {
             anim id est laborum.
           </p>
         </div>
-
+        <hr className="md:invisible visible"></hr>
         {/* sigin form */}
         <div className="lg:w-1/2 w-[85%] mx-auto p-4">
           <div>

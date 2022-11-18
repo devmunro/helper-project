@@ -24,8 +24,8 @@ const handleMenu = () => {
 }
   return (
     <div>
-        <img onClick={handleMenu} className="w-8" alt="hamburger menu" src={image}></img>
-        {open && <ul className="flex-col justify-end">
+        <img onClick={handleMenu} className="w-16 mr-4 p-2 "  alt="hamburger menu" src={image}></img>
+        {open && <ul className= "flex-col p-2 justify-end ">
         <li>
           <Link to="/">
             <h1 className="">Home</h1>
