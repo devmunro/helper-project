@@ -6,11 +6,10 @@ const Search = ({ word, update, filterData, updateFilterData, getUsers, setFilte
 
 
   const reset=()=>{
-    getUsers();
+   
     setFilterData({
        location:'',
-       category:'',
-       period:'',
+       category:''
      })
   }
 
