@@ -33,11 +33,14 @@ export default function UsersPost() {
         {trial.length > 0 &&
           trial.map((e) => {
             return (
+              <Link to={`search-help/${e.id}`}>
               <div className="w-1/3 p-4 m-2 bg-blue-100 rounded">
                 <h1 className="font-bold"> {e.title}</h1>
                 <p>{e.message}</p>
                 <p className="font-semibold">{e.location.toUpperCase()}</p>
+                <Link to={`search-help/${e.id}/response`}>RESPONSES</Link>
               </div>
+              </Link>
             );
           })}
         <Link

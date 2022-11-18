@@ -12,6 +12,7 @@ import Success from "./components/Add Job/Sucess";
 import { DatabaseProvider } from "./context/DatabaseContext";
 import SinglePostPage from "./components/SearchFilter/singlePostPage";
 import { AppliedProvider } from "./context/AppliedContext";
+import Responses from "./components/Account/responses";
 
 
 const App = () => {
@@ -29,6 +30,10 @@ const App = () => {
             <Route
               path="/account/search-help/:id"
               element={<SinglePostPage />}
+            />
+            <Route
+              path="/account/search-help/:id/response"
+              element={<Responses />}
             />
             <Route path="/account">
               <Route
