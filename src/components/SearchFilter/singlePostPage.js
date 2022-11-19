@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { DatabaseContext } from "../../context/DatabaseContext";
@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 
-import { updateCurrentUser } from "firebase/auth";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
