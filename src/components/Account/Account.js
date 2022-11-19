@@ -9,7 +9,7 @@ const Account = () => {
 
   return (
     <div className=" h-screen w-full">
-      <div className="flex-col  p-1 md:p-2 h-screen bg-blue-200 text-blue-400 ">
+      <div className="flex-col  p-1 md:p-2 h-screen  text-blue-400 ">
         <div className="flex ">
           <h1 className="text-2xl font-bold ">Dashboard</h1>
         </div>
@@ -37,7 +37,7 @@ const Account = () => {
           </div>
 
           {/* Job Posts */}
-          <div className=" flex m-2 lg:w-1/2  xl:w-2/3 rounded  text-white shadow-xl">
+          <div className=" flex m-2 bg-blue-100 lg:w-1/2  xl:w-2/3 rounded  text-white shadow-xl">
             
               <UsersPost />
             
