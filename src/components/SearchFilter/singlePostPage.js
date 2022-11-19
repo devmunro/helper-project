@@ -4,12 +4,13 @@ import { useContext } from "react";
 import { DatabaseContext } from "../../context/DatabaseContext";
 import { UserAuth } from "../../context/AuthContext";
 import Apply from "../Account/apply";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
   const { user } = UserAuth();
 
+  // when click back button goes back one page
   const navigate = useNavigate()
  const handleBack = () => {
   navigate(-1)
@@ -34,9 +35,9 @@ export default function SinglePostPage() {
   }, [data, id]);
 
   console.log(data);
+  // FUNCTION for  Checking if user has posted this, if so Appliction form does not show
   const postee = singlePost.filter((e) => e.user === user.uid);
-console.log(postee)
-console.log(user)
+
   return (
     <div>
       <button className="font-bold" onClick={handleBack}>
@@ -58,7 +59,7 @@ console.log(user)
               </div>
              
                 
-                
+              {/* // Checking if user has posted this, if so Appliction form does not show */}
                  {!postee.length > 0 &&  <div className="w-1/2"><Apply postID={e.id} postUser={e.user} /></div>} 
                 
               
