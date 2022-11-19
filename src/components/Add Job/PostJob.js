@@ -64,7 +64,7 @@ const PostHelp = () => {
           <h2 className=" text-lg p-2">- Complete the form below</h2>
 
      
-          <fieldset className="lg:flex flex-col m-2">
+          <fieldset className="flex-col sm:flex-row flex  m-2">
             <div className="p-2 flex gap-x-5	">
               <label htmlFor="name" className="p-2">
                 Name:
