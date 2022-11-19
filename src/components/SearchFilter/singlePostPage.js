@@ -20,6 +20,7 @@ export default function SinglePostPage() {
 
   const [singlePost, setSinglePost] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const single = () => {
@@ -42,7 +43,7 @@ console.log(user)
         BACK
       </button>
       {loading && <p>...loading</p>}
-      {!loading &&
+      {!loading && singlePost &&
         singlePost.map((e) => {
           return (
             <div className="flex w-full m-4 p-2 justify-evenly">
