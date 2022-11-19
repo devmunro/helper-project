@@ -5,6 +5,8 @@ import { DatabaseContext } from "../../context/DatabaseContext";
 import { UserAuth } from "../../context/AuthContext";
 import Apply from "../Account/apply";
 import { useNavigate } from "react-router-dom";
+import { deleteDoc, doc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
@@ -35,6 +37,16 @@ export default function SinglePostPage() {
   }, [data, id]);
 
   console.log(data);
+
+//DELETE POST
+const handleDelete= async ( )=> {
+
+  const collectionRef = doc(db, "users", id);
+  await deleteDoc(collectionRef)
+  navigate("/success")
+
+}
+
   // FUNCTION for  Checking if user has posted this, if so Appliction form does not show
   const postee = singlePost.filter((e) => e.user === user.uid);
 
@@ -54,7 +66,7 @@ export default function SinglePostPage() {
                 <ul className="flex font-bold space-x-2 m-2 p-2 justify-center">
                   <li>{e.location.toUpperCase()}</li>
                   <li>{e.name.toUpperCase()} & {e.age}</li>
-                  <li>applied</li>
+                  <button onClick={handleDelete}>DELETE POST</button>
                 </ul>
               </div>
              

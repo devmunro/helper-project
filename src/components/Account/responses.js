@@ -12,7 +12,7 @@ export default function Responses() {
 
   let { id } = useParams();
 
-
+console.log(appliedData)
     // when click back button goes back one page
     const navigate = useNavigate()
     const handleBack = () => {
