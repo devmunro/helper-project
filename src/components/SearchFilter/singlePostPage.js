@@ -7,7 +7,7 @@ import Apply from "../Account/apply";
 import { useNavigate } from "react-router-dom";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
-import Delete from "./delete";
+
 import { updateCurrentUser } from "firebase/auth";
 
 export default function SinglePostPage() {
@@ -41,19 +41,18 @@ export default function SinglePostPage() {
 
   //DELETE POST
 
-
-
   const handleBox = (e) => {
-    if (e.target.value === "no") 
-    {console.log("box closed")
-      
-      setCheckDelete(false) ;
-      } 
-    else if (e.target.value === "yes") {
-      console.log("deleted")
-     handleDelete() 
-    } else { setCheckDelete(true)
-    console.log("box open")}
+    if (e.target.value === "no") {
+      console.log("box closed");
+
+      setCheckDelete(false);
+    } else if (e.target.value === "yes") {
+      console.log("deleted");
+      handleDelete();
+    } else {
+      setCheckDelete(true);
+      console.log("box open");
+    }
   };
 
   const handleDelete = async () => {
@@ -84,16 +83,14 @@ export default function SinglePostPage() {
                   <li>
                     {e.name.toUpperCase()} & {e.age}
                   </li>
-                  <button onClick={handleBox}>
-                    DELETE POST
-                  </button>
+                  <button onClick={handleBox}>DELETE POST</button>
                 </ul>
               </div>
               {checkDelete && (
                 <div className="z-1 bg-blue-500 w-1/2 h-1/2 absolute">
                   ARE YOU SURE
                   <button
-                  value="yes"
+                    value="yes"
                     onClick={handleBox}
                     className="bg-blue-800 text-white p-2 m-2 block shadow-lg"
                   >
