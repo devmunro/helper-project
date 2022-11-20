@@ -81,8 +81,9 @@ export default function SinglePostPage() {
     navigate("/success");
   };
 
-  // FUNCTION for  Checking if user has posted this, if so Appliction form does not show
+  // FUNCTION for  Checking if user has posted this, if so Appliction form does not show for postee, and blocks delete for (possible) applier
   const postee = singlePost.filter((e) => e.user === user.uid);
+  console.log(postee)
 
   return (
     <div>
@@ -103,7 +104,7 @@ export default function SinglePostPage() {
                   <li>
                     {e.name.toUpperCase()} & {e.age}
                   </li>
-                  <button onClick={handleBox}>DELETE POST</button>
+                  {postee.length > 0 && <button onClick={handleBox}>DELETE POST</button>} {/*REMOVES DELETE BUTTON FOR POTENTIAL APPLIER*/}
                 </ul>
               </div>
               {checkDelete && (
