@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { DatabaseContext } from "../../context/DatabaseContext";
+import { AppliedContext } from "../../context/AppliedContext";
 import { UserAuth } from "../../context/AuthContext";
 import Apply from "../Account/apply";
 import { useNavigate } from "react-router-dom";
-import { deleteDoc, doc } from "firebase/firestore";
+import { deleteDoc, doc, getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
-
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
+  const { appliedData } = useContext(AppliedContext);
   const { user } = UserAuth();
 
   const [checkDelete, setCheckDelete] = useState(false);
@@ -36,7 +37,7 @@ export default function SinglePostPage() {
     single();
   }, [data, id]);
 
-  console.log(data);
+  ///find responses for related post
 
   //DELETE POST
 
@@ -47,21 +48,42 @@ export default function SinglePostPage() {
       setCheckDelete(false);
     } else if (e.target.value === "yes") {
       console.log("deleted");
-      handleDelete();
+      handleDelete(id);
     } else {
       setCheckDelete(true);
       console.log("box open");
     }
   };
 
-  const handleDelete = async () => {
+  const handleDelete = async (post) => {
+     /// related post
     const collectionRef = doc(db, "users", id);
     await deleteDoc(collectionRef);
+   
+      ///find responses for related post
+    const responseRef = collection(db, `applied`);
+    const docSnap = await getDocs(responseRef);
+
+    const matchItems = docSnap._snapshot.docChanges.filter(
+      (e) => e.doc.data.value.mapValue.fields.PostID.stringValue === id
+    );
+
+     ///delete responses for related post
+    matchItems.forEach((item) => {
+      const specific = item.doc.key.path.segments[6];
+
+      const test = doc(db, "applied", specific);
+      deleteDoc(test);
+
+      console.log("finsih");
+    });
+
     navigate("/success");
   };
 
-  // FUNCTION for  Checking if user has posted this, if so Appliction form does not show
+  // FUNCTION for  Checking if user has posted this, if so Appliction form does not show for postee, and blocks delete for (possible) applier
   const postee = singlePost.filter((e) => e.user === user.uid);
+  console.log(postee)
 
   return (
     <div>
@@ -82,7 +104,7 @@ export default function SinglePostPage() {
                   <li>
                     {e.name.toUpperCase()} & {e.age}
                   </li>
-                  <button onClick={handleBox}>DELETE POST</button>
+                  {postee.length > 0 && <button onClick={handleBox}>DELETE POST</button>} {/*REMOVES DELETE BUTTON FOR POTENTIAL APPLIER*/}
                 </ul>
               </div>
               {checkDelete && (
