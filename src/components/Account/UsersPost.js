@@ -22,14 +22,16 @@ export default function UsersPost() {
         {matchUser.length > 0 &&
           matchUser.map((e) => {
             return (
-              <Link className="" to={`search-help/${e.id}`}>
-                <div className=" flex justify-between md:p-4 p-2 md:m-2  bg-blue-700 rounded">
+              
+                <div key={e.id} className=" flex justify-between md:p-4 p-2 md:m-2  bg-blue-700 rounded">
+                  <Link className="" to={`search-help/${e.id}`}>
                   <div className="w-2/3 m-1 ">
                     <h1 className="font-bold p-1 "> {e.title}</h1>
                     <p className=" md:text-md text-sm  p-1">{e.brief}</p>
                     
                     <p className="font-semibold bg-blue-400 w-max px-1 rounded-lg">{e.location.toUpperCase()}</p>
                   </div>
+                  </Link>
                   <div className="flex-col ">
                     
                     <Link to={`search-help/${e.id}/response`}>
@@ -43,9 +45,10 @@ export default function UsersPost() {
                       </div>
                     </Link>
                   </div>
+                  <hr className="border-black" />
                 </div>
-                <hr className="border-black" />
-              </Link>
+                
+              
             );
           })}
       </div>
