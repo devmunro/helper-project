@@ -28,7 +28,7 @@ const Help = ({ filter, data }) => {
   console.log(data);
 
   return (
-    <div className="flex sm:flex-wrap sm:flex-row flex-col items-center">
+    <div className="flex sm:flex-wrap sm:flex-row flex-col justify-center">
       {(data.length === 0 || (searchResults.length === 0 && filter !== "")) && (
         <div className="pt-2 text-2xl font-bold">No Matching Posts</div>
       )}
@@ -38,7 +38,7 @@ const Help = ({ filter, data }) => {
           return (
             <div
               key={e.id}
-              className="sm:w-[50%] w-[90%] border-2 rounded border-indigo-300 border-solid m-4 "
+              className="sm:w-[45%] w-[90%] border-2 rounded border-indigo-300 border-solid m-4 "
             >
               <div className="bg-indigo-300 p-4 text-blue-900">
                 <h1 className="text-lg font-bold">
@@ -80,7 +80,7 @@ const Help = ({ filter, data }) => {
           return (
             <div
               key={e.id}
-              className="w-[90%] border-2 rounded border-indigo-300 border-solid m-4 "
+              className="sm:w-[45%] w-[90%] border-2 rounded border-indigo-300 border-solid m-4 "
             >
               <div className="bg-indigo-300 p-4 text-blue-900">
                 <h1 className="text-lg font-bold">
