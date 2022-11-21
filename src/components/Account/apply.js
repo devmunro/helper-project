@@ -62,7 +62,7 @@ const Apply = ({ postID, postUser }) => {
             onChange={handleChange}
             value={response.name}
             placeholder="Type your name"
-            className=" border-solid border-black border-2 p-1"
+            className=" border-solid border-black border-2 p-1 text-black"
           />
 
           <label htmlFor="age" className="p-1">
@@ -88,8 +88,8 @@ const Apply = ({ postID, postUser }) => {
             name="message"
             onChange={handleChange}
             value={response.message}
-            placeholder="a brief description of the help you need"
-            className=" border-solid border-black border-2 h-24 w-3/4 p-2"
+            placeholder="A cover letter for the role"
+            className=" border-solid border-black border-2 h-24 w-3/4 p-2 text-black"
           />
         </fieldset>
 
@@ -104,7 +104,7 @@ const Apply = ({ postID, postUser }) => {
             onChange={handleChange}
             value={response.email}
             placeholder="Type your email"
-            className=" border-solid border-black border-2 p-1"
+            className=" border-solid border-black border-2 p-1 text-black"
           />
 
           <label htmlFor="age" className="p-1">
@@ -118,7 +118,7 @@ const Apply = ({ postID, postUser }) => {
             onChange={handleChange}
             value={response.telephone}
             placeholder="Type your telephone"
-            className=" border-solid border-black border-2 p-1 "
+            className=" border-solid border-black border-2 p-1 text-black "
           />
         </fieldset>
         {alreadyApplied.length > 0 && (
@@ -127,7 +127,7 @@ const Apply = ({ postID, postUser }) => {
           </button>
         )}
         {alreadyApplied.length === 0 && (
-          <button type="submit" className="bg-blue-400">
+          <button type="submit" className="bg-blue-400 text-black">
             APPLY
           </button>
         )}
