@@ -86,7 +86,7 @@ export default function SinglePostPage() {
   return (
     <div className="w-full ">
       {checkDelete && (
-        <div className="w-full h-screen flex justify-center bg-black bg-opacity-50 z-1 absolute">
+        <div className="w-full h-full flex justify-center bg-black bg-opacity-50 z-1 absolute">
           <div className=" flex-col jus z-2 bg-blue-700 w-2/3 h-max m-10 p-4 rounded-xl border-2 border-white text-white">
             <div className="flex justify-center 	">
               <svg
@@ -169,17 +169,21 @@ export default function SinglePostPage() {
                     </svg>
                     Short Bio: {e.name.toUpperCase()} & {e.age}
                   </li>
+                  
                 </ul>
-                <span className="font-bold md:px-10 md:mx-8">Description</span>
+                <div className="flex justify-between"> 
+                <h3 className="font-bold md:px-10 md:mx-8">Description</h3>
+                <span>{postee.length > 0 && (
+                  <button className="font-bold italic text-black mx-5" onClick={handleBox}>
+                    DELETE
+                  </button>
+                )}
+                {/*REMOVES DELETE BUTTON FOR POTENTIAL APPLIER*/}</span>
+                </div>
                 <p className="p-4 m-1 bg-blue-300 shadow-sm rounded-lg md:px-10 md:mx-8">
                   {e.message}
                 </p>
-                {postee.length > 0 && (
-                  <button className="text-black mx-5" onClick={handleBox}>
-                    DELETE POST
-                  </button>
-                )}{" "}
-                {/*REMOVES DELETE BUTTON FOR POTENTIAL APPLIER*/}
+                
               </div>
 
               {/* // Checking if user has posted this, if so Appliction form does not show */}
