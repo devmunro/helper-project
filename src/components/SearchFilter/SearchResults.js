@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Apply from "../Account/apply";
+
 
 const Help = ({ filter, data }) => {
   const [searchResults, setSearchResults] = useState([]);
