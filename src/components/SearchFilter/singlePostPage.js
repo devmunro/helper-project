@@ -84,24 +84,63 @@ export default function SinglePostPage() {
   console.log(postee);
 
   return (
-    <div className="w-full">
-      <button className="font-bold" onClick={handleBack}>
-                BACK
+    <div className="w-full ">
+      {checkDelete && (
+        <div className="w-full h-screen flex justify-center bg-black bg-opacity-50 z-1 absolute">
+          <div className=" flex-col jus z-2 bg-blue-700 w-2/3 h-max m-10 p-4 rounded-xl border-2 border-white text-white">
+            <div className="flex justify-center 	">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 28 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-16 h-16"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                />
+              </svg>
+              <h2 className=" font-bold text-xl my-4">ARE YOU SURE YOU WANT TO DELETE!!!</h2>
+            </div>
+            <div className="flex justify-center ">
+              <button
+                value="yes"
+                onClick={handleBox}
+                className= "rounded bg-blue-800 font-bold text-white px-4 p-2 m-2 block shadow-lg"
+              >
+                YES
               </button>
+              <button
+                value="no"
+                onClick={handleBox}
+                className="bg-blue-800 rounded text-white font-bold px-4 p-2 m-2 block shadow-lg"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      <button className="font-bold" onClick={handleBack}>
+        BACK
+      </button>
       {loading && <p>...loading</p>}
       {!loading &&
         singlePost &&
         singlePost.map((e) => {
           return (
-            <div className=" lg:flex md:m-4 p-2  ">
-              
+            <div className=" lg:flex md:m-4 p-2 justify-center ">
               <div className=" w-full lg:w-1/2 lg:mx-4 text-justify border-2 p-4 shadow-lg	">
                 <h2 className="font-bold p-2 bg-blue-400">{e.title} </h2>
                 <ul className="flex-col font-bold  text-white m-2 p-2 justify-center text-sm ">
                   <li className="flex space-x-3 p-2 m-1 bg-blue-400 w-max rounded-full ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      fill="none"l
+                      fill="none"
+                      l
                       stroke="currentColor"
                       class="w-6 h-6"
                     >
@@ -130,44 +169,38 @@ export default function SinglePostPage() {
                     </svg>
                     Short Bio: {e.name.toUpperCase()} & {e.age}
                   </li>
-                  {postee.length > 0 && (
-                    <button onClick={handleBox}>DELETE POST</button>
-                  )}{" "}
-                  {/*REMOVES DELETE BUTTON FOR POTENTIAL APPLIER*/}
                 </ul>
                 <span className="font-bold md:px-10 md:mx-8">Description</span>
                 <p className="p-4 m-1 bg-blue-300 shadow-sm rounded-lg md:px-10 md:mx-8">
                   {e.message}
                 </p>
+                {postee.length > 0 && (
+                  <button className="text-black mx-5" onClick={handleBox}>
+                    DELETE POST
+                  </button>
+                )}{" "}
+                {/*REMOVES DELETE BUTTON FOR POTENTIAL APPLIER*/}
               </div>
-              {checkDelete && (
-                <div className="z-1 bg-blue-500 w-1/2 h-1/2 absolute">
-                  ARE YOU SURE
-                  <button
-                    value="yes"
-                    onClick={handleBox}
-                    className="bg-blue-800 text-white p-2 m-2 block shadow-lg"
-                  >
-                    YES
-                  </button>
-                  <button
-                    value="no"
-                    onClick={handleBox}
-                    className="bg-blue-800 text-white p-2 m-2 block shadow-lg"
-                  >
-                    No
-                  </button>
-                </div>
-              )}
 
               {/* // Checking if user has posted this, if so Appliction form does not show */}
               {!postee.length > 0 && (
                 <div className="w-full lg:w-1/2 my-2 lg:mx-4 text-justify border-2 p-4 shadow-lg text-white ">
                   <h2 className=" flex font-bold mx-4 text-justify  p-2 text-white bg-blue-600 w-max">
-                    Complete the form to apply <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-</svg>
-
+                    Complete the form to apply{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+                      />
+                    </svg>
                   </h2>
                   <Apply postID={e.id} postUser={e.user} />
                 </div>
