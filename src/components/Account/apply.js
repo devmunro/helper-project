@@ -48,7 +48,7 @@ const Apply = ({ postID, postUser }) => {
   return (
     <div className="w-full bg-blue-700">
       <form
-        className="w-full flex flex-col mx-auto mt-10 p-10 shadow-xl border-2 text-left"
+        className="w-full flex flex-col mx-auto mt-5 p-10 shadow-xl border-2 text-left"
         onSubmit={handleSubmit}
       >
         <fieldset className="flex flex-col">
