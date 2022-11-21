@@ -1,6 +1,5 @@
 import React from "react";
 import { UserAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
 import UsersPost from "./UsersPost";
 import UsersApplied from "./UserAppliedBoard";
 
@@ -44,6 +43,7 @@ const Account = () => {
           </div>
           
         </div>
+        {/* Job Apply */}
         <div className=" flex m-2 w-full rounded  text-white shadow-xl">
             
               <UsersApplied />
