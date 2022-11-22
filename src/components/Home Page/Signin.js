@@ -53,6 +53,8 @@ const Signin = () => {
               </Link>
             </p>
           </div>
+          {error === `Firebase: Error (auth/user-not-found).` && <div className="bg-blue-600 w-max shadow-lg p-2">! User Not Found</div>}
+          {error === `Firebase: Error (auth/wrong-password).` && <div className="bg-blue-600 w-max shadow-lg p-2">! Wrong Password</div>}
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col py-2">
               <label className="py-2 font-medium">Email Address</label>
