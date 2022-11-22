@@ -135,7 +135,7 @@ const PostHelp = () => {
               name="message"
               onChange={handleChange}
               value={data.message}
-              minlength="100"
+              minLength="100"
               placeholder="a brief description of the help you need"
               className=" border-solid border-black border-2 h-36 w-full p-2"
             />
