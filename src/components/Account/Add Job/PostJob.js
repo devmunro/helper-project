@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 
-import { db } from "../../firebase";
-import { UserAuth } from "../../context/AuthContext";
+import { db } from "../../../firebase";
+import { UserAuth } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const PostHelp = () => {
