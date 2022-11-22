@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-import LogoutButton from "../Account/logout";
+import LogoutButton from "../Logout/logout";
 import { UserAuth } from "../../context/AuthContext";
 import Hamburger from "./hamburger";
 

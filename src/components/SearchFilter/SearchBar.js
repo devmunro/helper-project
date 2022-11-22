@@ -26,35 +26,35 @@ const Search = ({
       />
       <div className="p-2 lg:mx-8 sm:mx-4 w-full ">
         <div className="flex sm:flex-col lg:flex-row flex-row w-1/2">
-        <select
-          id="location"
-          className="p-2 rounded-m m-2"
-          value={filterData.location}
-          onChange={updateFilterData}
-          name="location"
-        >
-          <option value="">Set Location</option>
-          <option value="london">london</option>
-          <option value="paris">paris</option>
-          <option value="barcelona">barcelona</option>
-          <option value="rome">rome</option>
-        </select>
-        <select
-          id="category"
-          className="p-2 rounded-m m-2"
-          value={filterData.category}
-          onChange={updateFilterData}
-          name="category"
-        >
-          <option value="">Set Catergory</option>
-          <option value="transport">transport</option>
-          <option value="delivery">delivery</option>
-          <option value="cooking">cooking</option>
-        </select>
-        <button onClick={reset}>Reset filters</button>
+          <select
+            id="location"
+            className="p-2 rounded-m m-2"
+            value={filterData.location}
+            onChange={updateFilterData}
+            name="location"
+          >
+            <option value="">Set Location</option>
+            <option value="london">london</option>
+            <option value="paris">paris</option>
+            <option value="barcelona">barcelona</option>
+            <option value="rome">rome</option>
+          </select>
+          <select
+            id="category"
+            className="p-2 rounded-m m-2"
+            value={filterData.category}
+            onChange={updateFilterData}
+            name="category"
+          >
+            <option value="">Set Catergory</option>
+            <option value="transport">transport</option>
+            <option value="delivery">delivery</option>
+            <option value="cooking">cooking</option>
+          </select>
+          <button onClick={reset}>Reset filters</button>
         </div>
 
-        
+
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 
-import { db } from "../../firebase";
-import { UserAuth } from "../../context/AuthContext";
+import { db } from "../../../firebase";
+import { UserAuth } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const PostHelp = () => {
@@ -44,7 +44,7 @@ const PostHelp = () => {
   };
   return (
     <div className="lg:flex w-full ">
-     
+
       {/* image */}
       <div className="w-1/2  hidden lg:block  overflow-hidden h-screen">
         <img
@@ -63,7 +63,7 @@ const PostHelp = () => {
           <h1 className="font-bold text-xl p-2">GET THE HELP YOU NEED</h1>
           <h2 className=" text-lg p-2">- Complete the form below</h2>
 
-     
+
           <fieldset className="flex-col sm:flex-row flex  m-2">
             <div className="p-2 flex gap-x-5	">
               <label htmlFor="name" className="p-2">
@@ -135,7 +135,7 @@ const PostHelp = () => {
               name="message"
               onChange={handleChange}
               value={data.message}
-              minlength="100"
+              minLength="100"
               placeholder="a brief description of the help you need"
               className=" border-solid border-black border-2 h-36 w-full p-2"
             />
