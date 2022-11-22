@@ -10,6 +10,7 @@ import { db } from "../../firebase";
 import skyscraper from "../../icons/SkyscraperIcon.png";
 import info from "../../icons/Infoicon.png";
 import warning from "../../icons/WarningIcon.png";
+import complete from "../../icons/Completeicon.png";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
@@ -124,8 +125,8 @@ export default function SinglePostPage() {
         singlePost &&
         singlePost.map((e) => {
           return (
-            <div className=" lg:flex md:m-4 p-2 justify-center ">
-              <div className=" w-full lg:w-1/2 lg:mx-4 text-justify border-2 p-4 shadow-lg	">
+            <div key="e.id" className=" lg:flex md:m-4 p-2 justify-center ">
+              <div className=" w-full lg:w-2/3 lg:mx-4 text-justify border-2 p-4 shadow-lg	">
                 <h2 className="font-bold p-2 bg-blue-400">{e.title} </h2>
                 <ul className="flex-col font-bold  text-white m-2 p-2 justify-center text-sm ">
                   <li className="flex space-x-3 p-2 m-1 bg-blue-400 w-max rounded-full items-center	">
@@ -161,22 +162,9 @@ export default function SinglePostPage() {
               {/* // Checking if user has posted this, if so Appliction form does not show */}
               {!postee.length > 0 && (
                 <div className="w-full lg:w-1/2 my-2 lg:mx-4 text-justify border-2 p-4 shadow-lg text-white ">
-                  <h2 className=" flex font-bold mx-4 text-justify  p-2 text-white bg-blue-600 w-max">
+                  <h2 className=" flex items-center font-bold mx-4 text-justify  p-2 text-white bg-blue-600 w-max">
                     Complete the form to apply{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-                      />
-                    </svg>
+                    <img className="p-2" src={complete} alt="icon of skyscraper"></img>
                   </h2>
                   <Apply postID={e.id} postUser={e.user} />
                 </div>
