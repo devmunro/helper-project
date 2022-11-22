@@ -1,6 +1,6 @@
 import React from "react";
-import Signin from "./components/Account/Signin";
-import Signup from "./components/Account/Signup";
+import Signin from "./components/Home Page/Signin";
+import Signup from "./components/Home Page/Signup";
 import Account from "./components/Account/Account";
 import { Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -20,53 +20,53 @@ const App = () => {
     <div className="App">
       <AuthContextProvider>
         <DatabaseProvider>
-        <AppliedProvider>
-          <NavBar />
+          <AppliedProvider>
+            <NavBar />
 
-          <Routes>
-            <Route exact path="/" element={<Signin />} />
+            <Routes>
+              <Route exact path="/" element={<Signin />} />
 
-            <Route path="/signup" element={<Signup />} />
-            <Route
-              path="/account/search-help/:id"
-              element={<SinglePostPage />}
-            />
-            <Route
-              path="/account/search-help/:id/response"
-              element={<Responses />}
-            />
-            <Route path="/account">
+              <Route path="/signup" element={<Signup />} />
               <Route
-                index
-                element={
-                  <ProtectedRoute>
-                    <Account />
-                  </ProtectedRoute>
-                }
+                path="/account/search-help/:id"
+                element={<SinglePostPage />}
               />
               <Route
-                path="/account/post-help"
-                element={
-                  <ProtectedRoute>
-                    <PostHelp />
-                  </ProtectedRoute>
-                }
+                path="/account/search-help/:id/response"
+                element={<Responses />}
               />
+              <Route path="/account">
+                <Route
+                  index
+                  element={
+                    <ProtectedRoute>
+                      <Account />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/account/post-help"
+                  element={
+                    <ProtectedRoute>
+                      <PostHelp />
+                    </ProtectedRoute>
+                  }
+                />
 
-              <Route
-                path="/account/search-help"
-                element={
-                  <ProtectedRoute>
-                    <SearchHelp />
-                  </ProtectedRoute>
-                }
-              ></Route>
-            </Route>
+                <Route
+                  path="/account/search-help"
+                  element={
+                    <ProtectedRoute>
+                      <SearchHelp />
+                    </ProtectedRoute>
+                  }
+                ></Route>
+              </Route>
 
-            <Route path="/success" element={<Success />} />
-          </Routes>
-          
-        </AppliedProvider>
+              <Route path="/success" element={<Success />} />
+            </Routes>
+
+          </AppliedProvider>
         </DatabaseProvider>
       </AuthContextProvider>
     </div>

@@ -44,7 +44,7 @@ const PostHelp = () => {
   };
   return (
     <div className="lg:flex w-full ">
-     
+
       {/* image */}
       <div className="w-1/2  hidden lg:block  overflow-hidden h-screen">
         <img
@@ -63,7 +63,7 @@ const PostHelp = () => {
           <h1 className="font-bold text-xl p-2">GET THE HELP YOU NEED</h1>
           <h2 className=" text-lg p-2">- Complete the form below</h2>
 
-     
+
           <fieldset className="flex-col sm:flex-row flex  m-2">
             <div className="p-2 flex gap-x-5	">
               <label htmlFor="name" className="p-2">
