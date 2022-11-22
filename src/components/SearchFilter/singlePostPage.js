@@ -9,6 +9,7 @@ import { deleteDoc, doc, getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 import skyscraper from "../../icons/SkyscraperIcon.png";
 import info from "../../icons/Infoicon.png";
+import warning from "../../icons/WarningIcon.png";
 
 export default function SinglePostPage() {
   const { data } = useContext(DatabaseContext);
@@ -89,22 +90,9 @@ export default function SinglePostPage() {
     <div className="w-full ">
       {checkDelete && (
         <div className="w-full h-full flex justify-center bg-black bg-opacity-50 z-1 absolute">
-          <div className=" flex-col jus z-2 bg-blue-700 w-2/3 h-max m-10 p-4 rounded-xl border-2 border-white text-white">
+          <div className=" flex-col jus z-2 bg-blue-700 w-full md:w-2/3 h-max m-10 p-4 rounded-xl border-2 border-white text-white">
             <div className="flex justify-center 	">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 28 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-16 h-16"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-                />
-              </svg>
+            <img className="p-2" src={warning} alt="icon of skyscraper"></img>
               <h2 className=" font-bold text-xl my-4">
                 ARE YOU SURE YOU WANT TO DELETE!!!
               </h2>
