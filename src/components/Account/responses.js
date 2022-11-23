@@ -36,7 +36,7 @@ console.log(appliedData)
       {userResponses.length > 0 &&
         userResponses.map((e) => {
           return (
-            <div className="w-90 p-4 m-4 bg-blue-100 rounded">
+            <div key ={e.id} className="w-90 p-4 m-4 bg-blue-100 rounded">
               <h1 className="font-bold"> {e.name}</h1>
               <p>{e.message}</p>
               <p className="font-semibold">{e.telephone}</p>
