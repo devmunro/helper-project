@@ -24,6 +24,7 @@ console.log(appliedData)
   const postTitle = data.find((e) => e.id === id);
 
   console.log(userResponses)
+  
 
   return (
     <div className="w-full">
