@@ -24,18 +24,18 @@ const App = () => {
             <NavBar />
 
             <Routes>
-              <Route exact path="/" element={<Signin />} />
+              <Route exact path="/helper-project/" element={<Signin />} />
 
-              <Route path="/signup" element={<Signup />} />
+              <Route path="/helper-project/signup" element={<Signup />} />
               <Route
-                path="/account/search-help/:id"
+                path="/helper-project/account/search-help/:id"
                 element={<SinglePostPage />}
               />
               <Route
-                path="/account/search-help/:id/response"
+                path="/helper-project/account/search-help/:id/response"
                 element={<Responses />}
               />
-              <Route path="/account">
+              <Route path="/helper-project/account">
                 <Route
                   index
                   element={
@@ -45,7 +45,7 @@ const App = () => {
                   }
                 />
                 <Route
-                  path="/account/post-help"
+                  path="/helper-project/account/post-help"
                   element={
                     <ProtectedRoute>
                       <PostHelp />
@@ -54,7 +54,7 @@ const App = () => {
                 />
 
                 <Route
-                  path="/account/search-help"
+                  path="/helper-project/account/search-help"
                   element={
                     <ProtectedRoute>
                       <SearchHelp />
@@ -63,7 +63,7 @@ const App = () => {
                 ></Route>
               </Route>
 
-              <Route path="/success" element={<Success />} />
+              <Route path="/helper-project/success" element={<Success />} />
             </Routes>
 
           </AppliedProvider>
