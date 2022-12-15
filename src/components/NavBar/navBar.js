@@ -13,20 +13,20 @@ const NavBar = () => {
       <div className=" flex justify-end text-lg text-white md:visible collapse">
         <ul className="flex justify-around px-1">
           <li className="mr-3 list-none font-bold">
-            <Link to="/">Home</Link>
+            <Link to="/helper-project">Home</Link>
           </li>
           <li className="mr-3 list-none">
-            <Link to="/account/search-help">Search</Link>
+            <Link to="/helper-project/account/search-help">Search</Link>
           </li>
           <li className="mr-3 list-none">
-            <Link to="/account/post-help">Post Job</Link>
+            <Link to="/helper-project/account/post-help">Post Job</Link>
           </li>
           <li className="mr-3 list-none">
-            <Link to="/account">Account</Link>
+            <Link to="/helper-project/account">Account</Link>
           </li>
 
           <li>
-            {pathname !== "/" && pathname !== "/signup" && (
+            {pathname !== "/helper-project/" && pathname !== "/helper-project/signup" && (
               <LogoutButton handleLogout={handleLogout} />
             )}
           </li>

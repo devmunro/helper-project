@@ -28,24 +28,24 @@ export default function Hamburger() {
       <img onClick={handleMenu} className="w-16 mr-4 p-2 " alt="hamburger menu" src={image}></img>
       {open && <ul className="flex-col p-2 justify-end ">
         <li>
-          <Link to="/">
+          <Link to="/helper-project/">
             <h1 className="">Home</h1>
           </Link>
         </li>
 
         <li className="mr-3 list-none">
-          <Link to="/account/search-help">Search</Link>
+          <Link to="/helper-project/account/search-help">Search</Link>
         </li>
         <li className="mr-3 list-none">
-          <Link to="/account/post-help">Post Job</Link>
+          <Link to="/helper-project/account/post-help">Post Job</Link>
         </li>
         <li className="mr-3 list-none">
-          <Link to="/account">Account</Link>
+          <Link to="/helper-project/account">Account</Link>
         </li>
 
         <li>
           {" "}
-          {pathname !== "/" && pathname !== "/signup" && (
+          {pathname !== "/helper-project/" && pathname !== "/helper-project/signup" && (
             <LogoutButton handleLogout={handleLogout} />
           )}
         </li>

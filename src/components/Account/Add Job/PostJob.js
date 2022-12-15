@@ -30,7 +30,7 @@ const PostHelp = () => {
       user: user.uid,
     });
 
-    navigate("/success");
+    navigate("/helper-project/success");
   };
 
   const handleChange = (e) => {

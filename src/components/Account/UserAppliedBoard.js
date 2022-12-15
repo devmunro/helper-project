@@ -37,7 +37,7 @@ console.log(result)
       {result.length > 0 &&
           result.map((e) => {
             return (
-              <Link className="" to={`search-help/${e[0].id}`}>
+              <Link className="" to={`/helper-project/search-help/${e[0].id}`}>
                 <div className=" flex justify-between p-4 m-2 bg-blue-700 rounded">
                   <div className="">
                     <h1 className="font-bold"> {e[0].title}</h1>

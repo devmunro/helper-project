@@ -33,7 +33,7 @@ const Apply = ({ postID, postUser }) => {
       PostOwner: postUser
     });
 
-    navigate("/success");
+    navigate("/helper-project/success");
   };
 
   const handleChange = (e) => {
