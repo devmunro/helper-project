@@ -17,7 +17,7 @@ const Signup = () => {
     console.log(email, password);
     try {
       await createUser(email, password);
-      navigate("/account");
+      navigate("/helper-project/account");
     } catch (error) {
       setError(error.message);
     } finally {
@@ -49,7 +49,7 @@ const Signup = () => {
             </h1>
             <p className="py-2">
               Already have an account{" "}
-              <Link to="/" className="underline">
+              <Link to="/helper-project" className="underline">
                 Sign In
               </Link>
             </p>

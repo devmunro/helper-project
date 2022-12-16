@@ -7,16 +7,17 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  
   const navigate = useNavigate();
 
-  const { signIn } = UserAuth();
+  const { signIn, message } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await signIn(email, password);
-      navigate("/account");
+      navigate("/helper-project/account");
     } catch (e) {
       setError(e.message);
       console.log(error);
@@ -48,13 +49,14 @@ const Signin = () => {
             <h1 className="text-2xl font-bold py-2">Sign in to your account</h1>
             <p className="py-2">
               Don´t have an account{" "}
-              <Link to="/signup" className="underline">
+              <Link to="/helper-project/signup" className="underline">
                 Sign Up
               </Link>
             </p>
           </div>
           {error === `Firebase: Error (auth/user-not-found).` && <div className="bg-blue-600 w-max shadow-lg p-2">! User Not Found</div>}
           {error === `Firebase: Error (auth/wrong-password).` && <div className="bg-blue-600 w-max shadow-lg p-2">! Wrong Password</div>}
+          {message && <div className="bg-blue-600 w-max shadow-lg p-2">You need to Login/Signup to access this page</div>}
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col py-2">
               <label className="py-2 font-medium">Email Address</label>
