@@ -14,7 +14,7 @@ export default function UsersPost() {
     <div className="w-full m-1 p-2 bg-blue-100 ">
       <div className="flex justify-between bg-blue-400 px-2">
         <h2 className="md:text-2xl  text-xl p-2 py-4 font-semibold">Ongoing Job Posts</h2>
-        <Link className="rounded-md m-2 px-2 bg-blue-900" to="/account/post-help">
+        <Link className="rounded-md m-2 px-2 bg-blue-900" to="/helper-project/account/post-help">
           Add Post <span className="text-2xl">+</span>
         </Link>
       </div>
