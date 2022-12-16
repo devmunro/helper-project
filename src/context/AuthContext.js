@@ -36,7 +36,7 @@ export const AuthContextProvider=({children})=>{
    const handleLogout=async ()=>{
       try{
          await logout();
-         navigate('/');
+         navigate('/helper-project');
       }
       catch(e){
          console.log(e.message);
