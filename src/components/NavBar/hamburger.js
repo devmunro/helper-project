@@ -45,7 +45,7 @@ export default function Hamburger() {
 
         <li>
           {" "}
-          {pathname !== "/helper-project/" && pathname !== "/helper-project/signup" && (
+          {pathname !== "/helper-project" && pathname !== "/helper-project/signup" && (
             <LogoutButton handleLogout={handleLogout} />
           )}
         </li>
