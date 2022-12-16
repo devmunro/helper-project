@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const UserContext=createContext();
 export const AuthContextProvider=({children})=>{
    const [user,setUser]=useState();
+   const [message, setMessage] = useState(false);
 
    const createUser=(email,password)=>{
       return createUserWithEmailAndPassword(auth,email,password)
@@ -50,7 +51,9 @@ export const AuthContextProvider=({children})=>{
             user,
             logout,
             signIn,
-            handleLogout
+            handleLogout,
+            setMessage,
+            message
          }}
       >
          {children}
